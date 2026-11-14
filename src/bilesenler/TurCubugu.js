@@ -150,7 +150,7 @@ export default function TurCubugu({
           <Text style={[s.toprak, b.toprak]} numberOfLines={1}>
             <Text style={s.toprakSayi}>{ozet.parca}</Text>
             {'/' + (hedefEsigi || ozet.toplamParca) + ' bölge'}
-            {hedefKalanTur === undefined ? '' : '  ·  ' + hedefKalanTur + ' tur'}
+            {hedefKalanTur != null ? '  ·  ' + hedefKalanTur + ' tur' : ''}
           </Text>
         </View>
 
