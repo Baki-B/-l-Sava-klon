@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Harita hız ölçümü</title>
+    <!--
+      HARİTA HIZ ÖLÇÜMÜ (Görev 20 / Adım 3b) — yalnızca geliştirme aracı, oyuna girmez.
+
+      NİYE VAR. Baki telefonda "30 fps gibi" dedi. Telefon başında olmadan kare süresini
+      ölçebilmek için: oyunun kendi çizim kodu (`src/haritaCizim.js`) burada Skia'nın tarayıcı
+      sürümüyle (CanvasKit) ve EKRAN KARTIYLA (WebGL) çalışıyor. Yüzey telefondakiyle aynı
+      kurulumda açılıyor: çoklu örnekleme YOK, şablon tamponu YOK (react-native-skia'nın
+      Android yüzeyi: `OpenGLWindowContext.cpp`, `gl/Display.h`). Skia'nın hangi yoldan
+      çizdiğine karar veren şey bu iki ayar; bu yüzden pahalı yol burada da pahalı çıkıyor.
+
+      AÇMAK:  node scripts/harita-skia-onizleme.js   (maçı üretir: onizleme/harita-skia/sahne.json)
+              node scripts/onizleme-sunucu.js        → http://localhost:4173/onizleme/harita-hiz.html
+
+      OKUMA. Mutlak süreler bilgisayarın; telefon birkaç kat yavaş. Karşılaştırma aynı
+      bilgisayarda iki çizim arasında yapılır. "js" = kareyi kaydetmek (telefonda arayüz iş
+      parçacığındaki JavaScript), "skia" = Skia'nın işlemci tarafı + ekran kartının bitirmesi.
+    -->
+    <style>
+      body { margin: 0; background: #1b1d1f; color: #ddd; font: 12px/1.4 monospace; }
+      #tuval { display: block; width: 915px; height: 412px; }
+      #cikti { padding: 8px 12px; white-space: pre; }
+      button { font: inherit; margin: 4px; }
+    </style>
+    <script>
+      window.global = window;
+    </script>
+    <script src="/node_modules/canvaskit-wasm/bin/full/canvaskit.js"></script>
+  </head>
+  <body>
+    <canvas id="tuval"></canvas>
+    <div id="dugmeler"></div>
+    <div id="cikti">yükleniyor…</div>
+    <script type="module">
+      import { JsiSkApi } from '/node_modules/@shopify/react-native-skia/lib/module/skia/web/JsiSkia.js';
+      import * as Y from '/src/haritaCizim.js';
+      import { haritaOlcusu, kameraDonusumu, kameraKaydirmasi } from '/src/haritaDonusum.js';
+      import { askeriTon, RENK, HARITA_SEVIYE_HATASI, CIZGI_BUYUME } from '/src/tema.js';
+      import { DENGE } from '/src/denge.js';
+
+      // İlk Skia sürümü — yalnızca karşılaştırma için, depoda YOK (onizleme/harita-skia/ yok
+      // sayılıyor). Oradaysa 'eski' seçeneği açılır: git show <eski işlem>:src/haritaCizim.js
+      // çıktısındaki içe aktarmalar ../../src/ yapılarak haritaCizim-v1.js adıyla konur.
+      const E = await import('/onizleme/harita-skia/haritaCizim-v1.js').catch(() => null);
+
+      const cikti = document.getElementById('cikti');
+      const yaz = (s) => (cikti.textContent += s + '\n');
+      cikti.textContent = '';
+
+      // Yatay telefon: 915×412 dp, yoğunluk 2.625 (1080p sınıfı ekran).
+      const EKRAN = { g: 915, y: 412, yogunluk: 2.625 };
+      const EN_UZAK = 0.9,
+        EN_YAKIN = 7;
+
+      const CK = await CanvasKitInit({
+        locateFile: (f) => '/node_modules/canvaskit-wasm/bin/full/' + f,
+      });
+      const Skia = JsiSkApi(CK);
+
+      const tuval = document.getElementById('tuval');
+      tuval.width = Math.round(EKRAN.g * EKRAN.yogunluk);
+      tuval.height = Math.round(EKRAN.y * EKRAN.yogunluk);
+      // Telefondaki yüzey: çoklu örnekleme yok, şablon yok.
+      const baglam = CK.GetWebGLContext(tuval, { antialias: 0, stencil: 0, depth: 0 });
+      const gr = CK.MakeWebGLContext(baglam);
+      const yuzey = CK.MakeOnScreenGLSurface(gr, tuval.width, tuval.height, CK.ColorSpace.SRGB);
+      const gl = tuval.getContext('webgl2');
+      yaz(
+        'yüzey: ' + tuval.width + '×' + tuval.height + ' · ekran kartı: ' +
+          (gl.getParameter(gl.getExtension('WEBGL_debug_renderer_info')?.UNMASKED_RENDERER_WEBGL ?? gl.RENDERER) || '?') +
+          ' · örnekleme ' + gl.getParameter(gl.SAMPLES) + ' · şablon ' + gl.getParameter(gl.STENCIL_BITS)
+      );
+
+      const al = (u) => fetch(u).then((r) => r.json());
+      const [seviyeVerisi, parcaVerisi, haritaVerisi, mac, susVerisi, hatVerisi, nehirVerisi] = await Promise.all([
+        al('/veri/harita-seviyeleri.json'),
+        al('/veri/parcalar.json'),
+        al('/veri/harita.json'),
+        al('/onizleme/harita-skia/sahne.json'),
+        al('/veri/harita-susleri.json'),
+        al('/veri/turkiye-hat.json'),
+        al('/veri/harita-nehirler.json'),
+      ]);
+      const ttf = await fetch(
+        '/node_modules/@expo-google-fonts/chakra-petch/700Bold/ChakraPetch_700Bold.ttf'
+      ).then((r) => r.arrayBuffer());
+      const yuz = Skia.Typeface.MakeFreeTypeFaceFromData(Skia.Data.fromBytes(new Uint8Array(ttf)));
+      const font = Skia.Font(yuz, 13);
+
+      const meta = parcaVerisi.meta;
+      const parcalar = parcaVerisi.parcalar;
+      const o = haritaOlcusu(EKRAN.g, EKRAN.y, meta.genislik, meta.yukseklik);
+      const AYAR = {
+        CAP: DENGE.ROZET.CAP,
+        ORTA: DENGE.ROZET.ORTA_SINIR,
+        YAKIN: DENGE.ROZET.YAKIN_SINIR,
+        HISTEREZIS: DENGE.ROZET.KATMAN_HISTEREZIS,
+        SERIT: DENGE.ROZET.SERIT_ESIGI,
+        FIGUR: DENGE.ROZET.FIGUR_ESIGI,
+        // İlk sürümün (eski) rozet sınırları — yalnızca karşılaştırma için.
+        EN_KUCUK: 16,
+        EN_BUYUK: 60,
+      };
+      const vurguGirdi = {
+        secili: mac.benimParca,
+        komsular: new Set(mac.komsular),
+        hedefler: null,
+        oklar: [],
+        kapsam: null,
+      };
+
+      const sure = (fn) => {
+        const t0 = performance.now();
+        const r = fn();
+        return [r, performance.now() - t0];
+      };
+
+      // ---- ESKİ: ilk Skia sürümü (her karede rozet ve çizgi) ----
+      function eskiSahne() {
+        const kaynak = E.haritaKaynagiKur(Skia, seviyeVerisi, parcalar);
+        const hatlar = E.hatlariKur(Skia, kaynak, null);
+        const dolgular = E.dolgulariHesapla(parcalar, 'il', mac.sahiplik, mac.aktorRenk, null, null);
+        return {
+          o,
+          dolgular: E.dolguResimleri(Skia, kaynak, dolgular, meta),
+          hatlar,
+          sinirlar: true,
+          cizgiBuyume: CIZGI_BUYUME,
+          vurgu: E.vurguHazirla(Skia, kaynak, vurguGirdi, meta),
+          toleranslar: kaynak.toleranslar,
+          hata: HARITA_SEVIYE_HATASI,
+          rozetler: {
+            il: E.rozetleriHazirla(mac.ilRozetleri, font),
+            parca: E.rozetleriHazirla(mac.parcaRozetleri, font),
+          },
+          sekil: E.sekilleriKur(Skia),
+          font,
+          yazi: E.yaziOlcusu(font),
+          renk: E.sahneRenkleri(Skia),
+          ayar: AYAR,
+          lw: EKRAN.g,
+          lh: EKRAN.y,
+        };
+      }
+      const eskiKare = (c, s, kam) => E.sahneyiCiz(c, Skia, s, { ...kam, f: o.f });
+
+      // ---- YENİ: oyunun çizimi (HaritaSkia.js'in useMemo'larının aynısı) ----
+      const ekran = { f: o.f, yogunluk: EKRAN.yogunluk };
+      function yeniSahne(secenek = {}) {
+        const [kaynak, t1] = sure(() => Y.haritaKaynagiKur(Skia, seviyeVerisi, parcalar));
+        const bantlar = Y.bantlariKur(o.f, kaynak.toleranslar, HARITA_SEVIYE_HATASI, EN_UZAK, EN_YAKIN);
+        const renk = Y.sahneRenkleri(Skia);
+        const sekil = Y.sekilleriKur(Skia);
+        const dolgular = Y.dolgulariHesapla(parcalar, 'il', mac.sahiplik, mac.aktorRenk, null, null);
+        const [dolguResmi, t2] = sure(() => Y.dolguResimleri(Skia, kaynak, dolgular, meta, secenek));
+        const [seritler, t3] = sure(() => Y.hatSeritleriKur(Skia, kaynak, null, bantlar, ekran));
+        const [hatResmi, t4] = sure(() =>
+          secenek.hatResimleri
+            ? secenek.hatResimleri(kaynak, bantlar, renk)
+            : Y.hatResimleri(Skia, seritler, bantlar, true, renk, meta, ekran)
+        );
+        const [vurgu, t5] = sure(() => Y.vurguResimleri(Skia, kaynak, vurguGirdi, bantlar, meta, ekran));
+        const [atlas, t6] = sure(() => Y.rozetAtlasiKur(Skia, font, sekil));
+        // EN AĞIR HÂL (Görev 21): bütün ordular halkalı, iki ayrı sahip arasındaki her sınır
+        // cephe — gerçek maçta hiç olmayacak kadar kalabalık; üst sınırı görmek için.
+        const agir = !!secenek.agir;
+        const hakli = (l) => l.map((r, i) => ({ ...r, hak: [1, 0.6, 0.3, 0][i % 4] }));
+        const ilListe = agir ? hakli(mac.ilRozetleri) : mac.ilRozetleri;
+        const parcaListe = agir ? hakli(mac.parcaRozetleri) : mac.parcaRozetleri;
+        const cepheListe = agir
+          ? seviyeVerisi.hatSahipleri
+              .map(([a, b], hat) => (b && mac.sahiplik[a] !== mac.sahiplik[b] ? { hat, ben: 'a' } : null))
+              .filter(Boolean)
+          : mac.cephe || [];
+        const [rozetler, t7] = sure(() =>
+          Y.rozetResimleri(Skia, { il: ilListe, parca: parcaListe }, o.f, atlas, renk, AYAR, meta)
+        );
+        const kose = seritler.reduce((a, l) => a + (l ? l.length : 0), 0);
+        // Süsler (Görev 20: kıyı gölgesi, dağ, tepe, dalga) — oyunda her zaman açık.
+        const [sus, t8] = sure(() =>
+          secenek.susYok
+            ? null
+            : Y.susResimleri(Skia, Y.susGeometrisiKur(susVerisi, hatVerisi.yol, null), bantlar, meta, ekran)
+        );
+        // Görev 21: nehir, cephe hattı; halka ve figürler rozet resimlerinin içinde.
+        const g21 = !secenek.g21Yok;
+        const [cephe, t9] = sure(() =>
+          g21 ? Y.cepheResimleri(Skia, kaynak, cepheListe, bantlar, atlas, meta, ekran) : null
+        );
+        const [nehir, t11] = sure(() =>
+          g21 ? Y.nehirResimleri(Skia, Y.nehirGeometrisiKur(nehirVerisi), bantlar, meta, ekran) : null
+        );
+        const rz = g21 ? rozetler : { ...rozetler, halkaIl: null, halkaParca: null, figur: null };
+        return {
+          s: {
+            bantUst: bantlar.map((b) => b.ust),
+            bantSeviye: bantlar.map((b) => b.seviye),
+            dolgular: dolguResmi,
+            hatlar: hatResmi,
+            susAlt: sus ? sus.alt : null,
+            susUst: sus ? sus.ust : null,
+            nehir,
+            cephe,
+            vurgu,
+            rozetler: rz,
+            katmanBoya: Y.katmanBoyasi(Skia),
+            atlasBoya: Y.katmanBoyasi(Skia),
+          },
+          zaman: {
+            'yollar (bir kez)': t1,
+            'dolgu resimleri (sahiplik değişince)': t2,
+            ['çizgi şeritleri, ' + kose + ' grup (maç başına)']: t3,
+            ['çizgi resimleri, ' + bantlar.length + ' bant (maç başına)']: t4,
+            'vurgu resimleri (seçim değişince)': t5,
+            'rozet sayfası (bir kez)': t6,
+            'rozet resimleri (ordular değişince)': t7,
+            'süsler (maç başına)': t8,
+            ['cephe hattı, ' + cepheListe.length + ' hat (sahiplik/savaş değişince)']: t9,
+            'nehirler ve göller (maç başına)': t11,
+          },
+          bantlar,
+        };
+      }
+      const yeniKare = (c, s, kam) => Y.sahneyiCiz(c, s, kam);
+
+      // ---- KAMERA YOLLARI (her biri 90 kare) ----
+      const ilEt = (kod) => haritaVerisi.iller[kod].etiket;
+      function yol(ad, z0, z1, m0, m1) {
+        const kareler = [];
+        for (let i = 0; i < 90; i++) {
+          const t = i / 89;
+          const z = z0 * Math.pow(z1 / z0, t);
+          const x = m0.x + (m1.x - m0.x) * t,
+            y = m0.y + (m1.y - m0.y) * t;
+          const k = kameraKaydirmasi(x, y, o, z);
+          kareler.push({ z, tx: k.tx, ty: k.ty });
+        }
+        return { ad, kareler };
+      }
+      const YOLLAR = [
+        yol('kaydırma 1× (bütün harita)', 1, 1, { x: 420, y: 230 }, { x: 580, y: 220 }),
+        yol('kaydırma 1.8× (il rozetleri)', 1.8, 1.8, ilEt('06'), ilEt('35')),
+        yol('yakınlaştırma 0.9→7× (İstanbul)', 0.9, 7, ilEt('34'), ilEt('34')),
+        yol('kaydırma 4× (parça rozetleri)', 4, 4, ilEt('16'), ilEt('41')),
+        yol('kaydırma 7× (en yakın)', 7, 7, ilEt('34'), ilEt('41')),
+      ];
+
+      const deniz = CK.parseColorString(askeriTon(RENK.deniz));
+
+      // Bir kare: kaydet (js) → oynat + ekran kartının bitirmesini bekle (skia).
+      // Nefes (Görev 21): halkanın parlaklığı her karede başka — telefondaki gibi.
+      let nefesSayac = 0;
+      function kare(ciz, s, g) {
+        const d = kameraDonusumu(o, g.z, g.tx, g.ty);
+        const parcaSaydam = Y.rozetKatmaniSec(g.z, g.z >= AYAR.YAKIN ? 1 : 0, AYAR);
+        const seritSaydam = Y.seritKatmaniSec(g.z, g.z >= AYAR.SERIT ? 1 : 0, AYAR) * parcaSaydam;
+        const figurSaydam = Y.figurKatmaniSec(g.z, g.z >= AYAR.FIGUR ? 1 : 0, AYAR) * parcaSaydam;
+        const nefes = 0.5 + 0.5 * Math.cos(nefesSayac++ / 8);
+        const kam = { k: d.k, bx: d.bx, by: d.by, z: g.z, parcaSaydam, seritSaydam, figurSaydam, nefes };
+        const t0 = performance.now();
+        const kaydedici = Skia.PictureRecorder();
+        const kc = kaydedici.beginRecording(Skia.XYWHRect(0, 0, EKRAN.g, EKRAN.y));
+        ciz(kc, s, kam);
+        const resim = kaydedici.finishRecordingAsPicture();
+        const t1 = performance.now();
+        const c = yuzey.getCanvas();
+        c.clear(deniz);
+        c.save();
+        c.scale(EKRAN.yogunluk, EKRAN.yogunluk);
+        c.drawPicture(resim.ref);
+        c.restore();
+        yuzey.flush();
+        gl.finish();
+        const t2 = performance.now();
+        resim.ref.delete();
+        return [t1 - t0, t2 - t1];
+      }
+
+      function olc(ad, ciz, s) {
+        const satirlar = [];
+        for (const y of YOLLAR) {
+          for (const g of y.kareler.slice(0, 10)) kare(ciz, s, g); // ısınma
+          const js = [],
+            sk = [];
+          for (const g of y.kareler) {
+            const [a, b] = kare(ciz, s, g);
+            js.push(a);
+            sk.push(b);
+          }
+          const ort = (a) => a.reduce((x, y) => x + y, 0) / a.length;
+          const dilim = (a, p) => [...a].sort((x, y) => x - y)[Math.floor(a.length * p)];
+          const top = js.map((x, i) => x + sk[i]);
+          satirlar.push({
+            yol: y.ad,
+            js: ort(js),
+            skia: ort(sk),
+            ort: ort(top),
+            ortanca: dilim(top, 0.5),
+            p95: dilim(top, 0.95),
+          });
+        }
+        return { ad, satirlar };
+      }
+
+      // Kısa tablo: ortanca kare (tek tük sıçramalar ortalamayı yanıltıyor; tarayıcının
+      // kendi işi de karışıyor) · parantezde p95.
+      function kisaTablo(sonuclar) {
+        let t = '| Kamera yolu | ' + sonuclar.map((s) => s.ad).join(' | ') + ' |\n';
+        t += '|---|' + sonuclar.map(() => '---:').join('|') + '|\n';
+        for (let i = 0; i < YOLLAR.length; i++) {
+          t +=
+            '| ' + YOLLAR[i].ad + ' | ' +
+            sonuclar
+              .map((s) => s.satirlar[i].ortanca.toFixed(1) + ' ms (' + s.satirlar[i].p95.toFixed(1) + ')')
+              .join(' | ') +
+            ' |\n';
+        }
+        return t;
+      }
+
+      function tablo(sonuclar) {
+        let t = '| Kamera yolu | ' + sonuclar.map((s) => s.ad).join(' | ') + ' |\n';
+        t += '|---|' + sonuclar.map(() => '---').join('|') + '|\n';
+        for (let i = 0; i < YOLLAR.length; i++) {
+          t +=
+            '| ' + YOLLAR[i].ad + ' | ' +
+            sonuclar
+              .map((s) => {
+                const r = s.satirlar[i];
+                return (
+                  r.ort.toFixed(1) + ' ms (js ' + r.js.toFixed(1) + ' · skia ' + r.skia.toFixed(1) +
+                  ') · p95 ' + r.p95.toFixed(1)
+                );
+              })
+              .join(' | ') +
+            ' |\n';
+        }
+        return t;
+      }
+
+      // ---- KARŞILAŞTIRMA SEÇENEKLERİ (kararın gerekçesi; oyun yalnızca "yeni"yi kullanır) ----
+      // Yol çizgisi: sınır çizgileri Skia'nın yumuşatılmış YOL çizgisi olarak (ilk sürümün
+      // yöntemi, bantlı). Şeridin neden gerektiğini gösteriyor.
+      function yolCizgisi(kaynak, bantlar, renk) {
+        const hatlar = Y.hatlariKur(Skia, kaynak, null);
+        const b = Skia.Paint();
+        b.setAntiAlias(true);
+        b.setStyle(1);
+        b.setStrokeJoin(1);
+        b.setStrokeCap(1);
+        return bantlar.map((bant) => {
+          const w = Math.pow(bant.z, CIZGI_BUYUME - 1);
+          const kaydedici = Skia.PictureRecorder();
+          const c = kaydedici.beginRecording(Skia.XYWHRect(-60, -60, meta.genislik + 120, meta.yukseklik + 120));
+          for (const g of hatlar[bant.seviye]) {
+            b.setColor(g.ilSiniri ? renk.ilSinir : renk.parcaSinir);
+            b.setStrokeWidth((g.ilSiniri ? 1.4 : 0.8) * w);
+            c.drawPath(g.yol, b);
+          }
+          return kaydedici.finishRecordingAsPicture();
+        });
+      }
+
+      // Katman ayırma: yalnızca bir katman çizilsin (hangisi pahalı?).
+      function yalniz(katman, secenek = {}) {
+        const v = yeniSahne(secenek);
+        const bosKayit = Skia.PictureRecorder();
+        bosKayit.beginRecording(Skia.XYWHRect(0, 0, 1, 1));
+        const bos = bosKayit.finishRecordingAsPicture();
+        const s = { ...v.s };
+        if (katman !== 'dolgu') s.dolgular = s.dolgular.map(() => bos);
+        if (katman !== 'cizgi') s.hatlar = s.hatlar.map(() => bos);
+        if (katman !== 'rozet') s.rozetler = { il: null, parca: null };
+        if (katman !== 'vurgu') s.vurgu = null;
+        if (katman !== 'sus') {
+          s.susAlt = null;
+          s.susUst = null;
+        }
+        if (katman !== 'g21') {
+          s.nehir = null;
+          s.cephe = null;
+          if (s.rozetler) s.rozetler = { ...s.rozetler, halkaIl: null, halkaParca: null, figur: null };
+        }
+        if (katman === 'g21') s.rozetler = { ...v.s.rozetler, il: null, parca: null, serit: null };
+        return { ciz: yeniKare, s, zaman: v.zaman };
+      }
+
+      const VARYANTLAR = {
+        ...(E ? { eski: () => ({ ciz: eskiKare, s: eskiSahne() }) } : {}),
+        yeni: () => ({ ciz: yeniKare, ...yeniSahne() }),
+        'yeni, süssüz': () => ({ ciz: yeniKare, ...yeniSahne({ susYok: true }) }),
+        'yeni, Görev 21 yok': () => ({ ciz: yeniKare, ...yeniSahne({ g21Yok: true }) }),
+        'yeni, en ağır': () => ({ ciz: yeniKare, ...yeniSahne({ agir: true }) }),
+        'yalnız Görev 21': () => yalniz('g21'),
+        'yalnız süs': () => yalniz('sus'),
+        'yeni + yumuşak dolgu': () => ({ ciz: yeniKare, ...yeniSahne({ dolguYumusak: true }) }),
+        'yeni + yol çizgisi': () => ({ ciz: yeniKare, ...yeniSahne({ hatResimleri: yolCizgisi }) }),
+        'yalnız dolgu': () => yalniz('dolgu'),
+        'yalnız çizgi': () => yalniz('cizgi'),
+        'yalnız rozet': () => yalniz('rozet'),
+        'yalnız vurgu': () => yalniz('vurgu'),
+        'boş kare': () => ({ ciz: () => {}, s: {} }),
+      };
+
+      async function hepsiniOlc(adlar) {
+        const sonuclar = [];
+        for (const ad of adlar) {
+          yaz('ölçülüyor: ' + ad + ' …');
+          await new Promise((r) => setTimeout(r, 30));
+          const v = VARYANTLAR[ad]();
+          if (v.zaman) {
+            for (const [k, t] of Object.entries(v.zaman)) yaz('   hazırlık · ' + k + ': ' + t.toFixed(0) + ' ms');
+          }
+          sonuclar.push(olc(ad, v.ciz, v.s));
+        }
+        const t = tablo(sonuclar);
+        yaz('\n' + t);
+        const k = kisaTablo(sonuclar);
+        yaz('\n' + k);
+        window.SONUC = { sonuclar, tablo: t, kisa: k };
+        return t;
+      }
+
+      // Tek bir görünümü çizip ekranda bırakır (gözle denetim / ekran görüntüsü).
+      const hazir = {};
+      window.goster = (ad, yolNo, kareNo) => {
+        if (!hazir[ad]) hazir[ad] = VARYANTLAR[ad]();
+        const v = hazir[ad];
+        kare(v.ciz, v.s, YOLLAR[yolNo].kareler[kareNo]);
+        return ad + ' · ' + YOLLAR[yolNo].ad + ' · kare ' + kareNo;
+      };
+      window.hepsiniOlc = hepsiniOlc;
+      // Konsoldan deneme için (ölçümü etkilemez).
+      window.ic = { CK, Skia, Y, E, yuzey, gl, o, AYAR, font, meta, mac, EKRAN, deniz };
+      window.VARYANTLAR = Object.keys(VARYANTLAR);
+
+      const dg = document.getElementById('dugmeler');
+      const dugme = (yazi, fn) => {
+        const b = document.createElement('button');
+        b.textContent = yazi;
+        b.onclick = fn;
+        dg.appendChild(b);
+      };
+      if (E) dugme('eski / yeni', () => hepsiniOlc(['eski', 'yeni']));
+      dugme('bütün seçenekler', () => hepsiniOlc(Object.keys(VARYANTLAR)));
+      yaz('hazır. window.hepsiniOlc([...]) · window.goster(ad, yol, kare)');
+    </script>
+  </body>
+</html>

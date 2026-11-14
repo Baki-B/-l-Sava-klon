@@ -1,0 +1,9 @@
+node_modules
+veri
+onizleme
+docs
+.expo
+android
+ios
+web-build
+package-lock.json

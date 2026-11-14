@@ -1,0 +1,80 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Font adayları — Türkçe sınavı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Teko:wght@600;700&family=Staatliches&family=Black+Ops+One&family=Russo+One&family=Chakra+Petch:wght@600;700&family=Rajdhani:wght@600;700&family=Archivo+Black&family=Saira+Condensed:wght@700;800&family=Barlow+Semi+Condensed:wght@400;600&family=Oswald:wght@600;700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  body { margin: 0; background: #203448; color: #F2F7FA; font-family: sans-serif; }
+</style>
+<script>
+  // ---- FONT ADAYLARI — TÜRKÇE SINAVI (2026-08-12) ----
+  //
+  // ⚠ ASIL RİSK TÜRKÇE KARAKTER. "Havalı" görünen pek çok oyun fontunda Ğ, Ş, İ ve ı
+  // yok; eksik glif olunca tarayıcı O HARFİ başka bir fontla çiziyor ve yazı ortasından
+  // kırılıyor. Bu sayfa her adayı "İL SAVAŞLARI" + "ĞŞÇÖÜİı" ile çizip yan yana koyuyor —
+  // karar gözle veriliyor, "destekliyor olmalı" varsayımıyla değil.
+  //
+  // Adaylar Google Fonts'tan: hepsinin `@expo-google-fonts/...` paketi var, yani seçilen
+  // oyunun İÇİNDE de kullanılabilir (ikon zaten PNG, orada font gömülmüyor).
+  const ADAYLAR = [
+    ['Bebas Neue', 400, 'sıkışık kapital — poster/oyun klasiği'],
+    ['Anton', 400, 'çok ağır sıkışık — en gürültülü'],
+    ['Teko', 700, 'uzun ve dar — sportif/askeri'],
+    ['Staatliches', 400, 'sıkışık kapital, karakterli'],
+    ['Black Ops One', 400, 'askeri şablon (stencil)'],
+    ['Russo One', 400, 'köşeli, teknik'],
+    ['Chakra Petch', 700, 'teknik/oyun arayüzü'],
+    ['Rajdhani', 700, 'köşeli, strateji arayüzü'],
+    ['Archivo Black', 400, 'ağır grotesk'],
+    ['Saira Condensed', 800, 'dar grotesk'],
+    ['Oswald', 700, 'ŞU AN KULLANILAN (başlık)'],
+    ['Barlow Semi Condensed', 600, 'ŞU AN KULLANILAN (gövde)'],
+  ];
+
+  const SINAV = 'İL SAVAŞLARI';
+  const HARFLER = 'ĞŞÇÖÜİı 0123';
+
+  window.uret = async function () {
+    await document.fonts.ready;
+    for (const [ad] of ADAYLAR) {
+      try { await document.fonts.load('700 80px "' + ad + '"'); } catch (e) {}
+    }
+    await new Promise((r) => setTimeout(r, 800));
+
+    const SATIR = 150;
+    const G = 1500;
+    const k = document.createElement('canvas');
+    k.width = G;
+    k.height = SATIR * ADAYLAR.length + 40;
+    document.body.appendChild(k);
+    const c = k.getContext('2d');
+    c.fillStyle = '#203448';
+    c.fillRect(0, 0, k.width, k.height);
+
+    ADAYLAR.forEach(([ad, agirlik, not], i) => {
+      const y = 40 + i * SATIR;
+      // Font adı ve notu — küçük, soluk.
+      c.fillStyle = '#9FB6C8';
+      c.font = '400 22px sans-serif';
+      c.textAlign = 'left';
+      c.fillText(ad + '  ·  ' + not, 30, y);
+
+      // Asıl sınav: başlık ölçüsünde.
+      c.fillStyle = '#F2F7FA';
+      c.font = agirlik + ' 72px "' + ad + '", sans-serif';
+      c.fillText(SINAV, 30, y + 78);
+
+      // Türkçe harfler ayrı — eksik glif burada hemen görünür.
+      c.fillStyle = '#BE5039';
+      c.font = agirlik + ' 56px "' + ad + '", sans-serif';
+      c.fillText(HARFLER, 760, y + 74);
+    });
+
+    const r = await fetch('/kaydet?ad=font-deneme.png', { method: 'POST', body: k.toDataURL('image/png') });
+    return await r.text();
+  };
+</script>

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "onizleme",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["scripts/onizleme-sunucu.js"],
+      "port": 4173
+    }
+  ]
+}

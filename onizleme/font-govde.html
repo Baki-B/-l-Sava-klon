@@ -1,0 +1,110 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Gövde fontu — Black Ops One eşleşmesi</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow+Semi+Condensed:wght@400;500;600&family=Chakra+Petch:wght@400;500;600&family=Rajdhani:wght@400;500;600&family=Saira+Condensed:wght@400;500;600&family=Titillium+Web:wght@400;600&family=Roboto+Condensed:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  body { margin: 0; background: #203448; }
+</style>
+<script>
+  // ---- GÖVDE FONTU ARAYIŞI (2026-08-12, Baki: "2. font için bununla uyumlu bir font bul
+  // VEYA bunun kalınlığını azaltıp kullanalım — 2 seçeneği de dene") ----
+  //
+  // ⚠ SEÇENEK B (inceltmek) TEKNİK OLARAK MÜMKÜN DEĞİL ve bu sayfa onu GÖSTERİYOR,
+  // iddia etmiyor: Black Ops One Google Fonts'ta TEK KESİMLİ bir font (yalnızca 400).
+  // CSS'e 100 de yazsan 900 de yazsan aynı çizim geliyor — tarayıcı var olmayan bir
+  // inceyi uyduramaz (sentetik KALINLAŞTIRMA yapar, sentetik İNCELTME diye bir şey yok).
+  //
+  // İkinci ve daha önemli sebep: Black Ops One bir GÖSTERİ (display) fontu. Şablon
+  // kesikleri 140 px'te karakter, 13 px'te kir. Gövde metni onunla yazılamaz — aşağıdaki
+  // "gövde denemesi" satırı bunu gözle gösteriyor.
+  const BASLIK = 'Black Ops One';
+  const ADAYLAR = [
+    ['Barlow Semi Condensed', 'ŞU ANKİ — dar grotesk, panelde çok bilgi sığıyor'],
+    ['Chakra Petch', 'teknik/askeri karakter, şablonla akraba'],
+    ['Rajdhani', 'köşeli, strateji arayüzü'],
+    ['Saira Condensed', 'dar, nötr'],
+    ['Titillium Web', 'teknik UI klasiği'],
+    ['Roboto Condensed', 'en nötr iş atı'],
+  ];
+
+  // Oyundan gerçek cümleler — soyut "lorem ipsum" bu kararı verdirmez.
+  const ETIKET = 'BURSA · 4 BÖLGE';
+  const GOVDE = 'Ordun bozguna uğradı ve çekildi. Kadronu doldurmak için toplanma emri ver.';
+  const SAYI = '12 birlik · 480 nüfus · %60 hâkimiyet';
+
+  window.uret = async function () {
+    await document.fonts.load('400 100px "' + BASLIK + '"');
+    for (const [ad] of ADAYLAR) {
+      for (const a of [400, 500, 600]) await document.fonts.load(a + ' 30px "' + ad + '"');
+    }
+    await new Promise((r) => setTimeout(r, 600));
+
+    const G = 1500;
+    const k = document.createElement('canvas');
+    k.width = G;
+    k.height = 300 + ADAYLAR.length * 200;
+    const c = k.getContext('2d');
+    c.fillStyle = '#203448';
+    c.fillRect(0, 0, G, k.height);
+    c.textBaseline = 'top';
+
+    // ---- BÖLÜM 1: "inceltme" denemesi ----
+    c.fillStyle = '#BE5039';
+    c.font = '600 26px sans-serif';
+    c.fillText('SEÇENEK B — Black Ops One inceltilebilir mi?', 30, 26);
+    c.fillStyle = '#9FB6C8';
+    c.font = '400 20px sans-serif';
+    c.fillText('Aynı yazı, CSS ağırlığı 100 · 400 · 900 — üçü de AYNI çiziliyor:', 30, 62);
+    [100, 400, 900].forEach((a, i) => {
+      c.fillStyle = '#F2F7FA';
+      c.font = a + ' 46px "' + BASLIK + '"';
+      c.fillText('İL SAVAŞLARI', 30 + i * 480, 96);
+      c.fillStyle = '#9FB6C8';
+      c.font = '400 18px sans-serif';
+      c.fillText('ağırlık ' + a, 30 + i * 480, 150);
+    });
+
+    // Gövde ölçüsünde şablon font — okunabilirlik sınavı.
+    c.fillStyle = '#9FB6C8';
+    c.font = '400 20px sans-serif';
+    c.fillText('Gövde ölçüsünde (15 px) şablon font:', 30, 190);
+    c.fillStyle = '#F2F7FA';
+    c.font = '400 15px "' + BASLIK + '"';
+    c.fillText(GOVDE, 30, 220);
+
+    // ---- BÖLÜM 2: eşleşme adayları ----
+    c.fillStyle = '#BE5039';
+    c.font = '600 26px sans-serif';
+    c.fillText('SEÇENEK A — Black Ops One başlık + aday gövde fontu', 30, 262);
+
+    ADAYLAR.forEach(([ad, not], i) => {
+      const y = 310 + i * 200;
+      // Başlık her satırda AYNI (Black Ops One) — değişen yalnızca altındaki gövde.
+      c.fillStyle = '#F2F7FA';
+      c.font = '400 40px "' + BASLIK + '"';
+      c.fillText(ETIKET, 30, y);
+
+      c.fillStyle = '#BFD2E0';
+      c.font = '400 26px "' + ad + '", sans-serif';
+      c.fillText(GOVDE, 30, y + 58);
+
+      c.fillStyle = '#F2F7FA';
+      c.font = '600 26px "' + ad + '", sans-serif';
+      c.fillText(SAYI, 30, y + 95);
+
+      c.fillStyle = '#9FB6C8';
+      c.font = '400 19px sans-serif';
+      c.fillText(ad + '  ·  ' + not, 30, y + 135);
+    });
+
+    const r = await fetch('/kaydet?ad=font-govde.png', {
+      method: 'POST',
+      body: k.toDataURL('image/png'),
+    });
+    return await r.text();
+  };
+</script>

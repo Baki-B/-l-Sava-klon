@@ -1,0 +1,124 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>İl Savaşları — ikon seçenekleri</title>
+<style>
+  @font-face {
+    font-family: 'Oswald';
+    src: url('/node_modules/@expo-google-fonts/oswald/700Bold/Oswald_700Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  body { margin: 0; background: #111; display: flex; gap: 16px; padding: 16px; flex-wrap: wrap; }
+  canvas { width: 300px; height: 300px; }
+</style>
+<script>
+  // ---- İKON SEÇENEKLERİ (2026-08-12, Baki: "İL yazısının rengini sevmedim, font da
+  // daha çarpıcı olmalı, birkaç farklı niş seçenek sun") ----
+  //
+  // ⚠ HARİTA %74 → %90. Baki "büyültmemişsin" dedi ve haklıydı: %74 gözle fark
+  // edilmiyordu. %90'da harita kenarlara dayanıyor, üst boşluk tamamen kapanıyor.
+  //
+  // ⚠ FONT SEÇENEKLERİ SİSTEM YAZI TİPLERİNDEN. İkon bir PNG olduğu için font uygulamaya
+  // GÖMÜLMÜYOR — yalnızca çizim anında gerekiyor. Bu yüzden Oswald dışındaki seçenekler
+  // pakete bir yük getirmiyor. (Aynı fontu OYUN İÇİNDE de istersen o zaman paket gerekir.)
+  const Z = 1024;
+  const ZEMIN_UST = '#29435C';    // tema ZEMIN.taban
+  const ZEMIN_ALT = '#203448';    // tema ZEMIN.cukur
+  const HARITA = '#b2bdc4';       // tema ZEMIN.harita
+  const HARITA_KENAR = '#0b1119'; // tema CIZGI.kalin
+  const KIREMIT = '#BE5039';      // tema VURGU.saldiri
+  const AK = '#F2F7FA';           // tema YAZI_RENK.birincil
+
+  // Dört seçenek: font × "İL" rengi. "SAVAŞLARI" hep AK — Baki onu onaylamıştı.
+  const SECENEKLER = [
+    {
+      ad: 'a-oswald-ak',
+      font: 'Oswald',
+      ilRenk: AK,
+      not: 'Oswald · İL beyaz — tek renk, monolitik',
+    },
+    {
+      ad: 'b-impact-ak',
+      font: 'Impact, Haettenschweiler, "Arial Narrow Bold"',
+      ilRenk: AK,
+      not: 'Impact · çok sıkışık ve sert',
+    },
+    {
+      ad: 'c-black-harita',
+      font: '"Arial Black", "Segoe UI Black"',
+      ilRenk: HARITA,
+      not: 'Arial Black · İL haritayla aynı gri-mavi',
+    },
+    {
+      ad: 'd-bahnschrift-bronz',
+      font: '"Bahnschrift Condensed", "Franklin Gothic Heavy", Impact',
+      ilRenk: '#C9A227',
+      not: 'Bahnschrift · İL bronz (temada yok, sıcak)',
+    },
+  ];
+
+  let HAT = null;
+
+  function ciz(k, s) {
+    const c = k.getContext('2d');
+    const g = c.createLinearGradient(0, 0, 0, Z);
+    g.addColorStop(0, ZEMIN_UST);
+    g.addColorStop(1, ZEMIN_ALT);
+    c.fillStyle = g;
+    c.fillRect(0, 0, Z, Z);
+
+    // Harita — %90, kenarlara dayanıyor.
+    const yol = new Path2D(HAT.yol);
+    const gen = HAT.meta.genislik;
+    const yuk = HAT.meta.yukseklik;
+    const hedef = Z * 0.9;
+    const ol = hedef / gen;
+    const ciziliYuk = yuk * ol;
+    c.save();
+    c.translate((Z - hedef) / 2, Z * 0.33 - ciziliYuk / 2);
+    c.scale(ol, ol);
+    c.shadowColor = 'rgba(0,0,0,0.5)';
+    c.shadowBlur = 24 / ol;
+    c.shadowOffsetY = 9 / ol;
+    c.fillStyle = HARITA;
+    c.fill(yol);
+    c.shadowColor = 'transparent';
+    c.strokeStyle = HARITA_KENAR;
+    c.lineWidth = 2.4 / ol;
+    c.lineJoin = 'round';
+    c.stroke(yol);
+    c.restore();
+
+    c.textAlign = 'center';
+    c.textBaseline = 'middle';
+
+    // "İL" — büyük, seçeneğin rengiyle.
+    c.fillStyle = s.ilRenk;
+    c.font = '700 145px ' + s.font;
+    c.letterSpacing = '18px';
+    c.fillText('İL', Z / 2, 655);
+
+    // "SAVAŞLARI" — Baki'nin onayladığı ölçü ve yer.
+    c.fillStyle = AK;
+    c.font = '700 138px ' + s.font;
+    c.letterSpacing = '4px';
+    c.fillText('SAVAŞLARI', Z / 2, 820);
+  }
+
+  window.uret = async function () {
+    HAT = await (await fetch('/veri/turkiye-hat.json')).json();
+    await document.fonts.load('700 140px Oswald');
+    const sonuc = [];
+    for (const s of SECENEKLER) {
+      const k = document.createElement('canvas');
+      k.width = k.height = Z;
+      document.body.appendChild(k);
+      ciz(k, s);
+      const r = await fetch('/kaydet?ad=ikon-' + s.ad + '.png', {
+        method: 'POST',
+        body: k.toDataURL('image/png'),
+      });
+      sonuc.push((await r.text()) + ' — ' + s.not);
+    }
+    return sonuc;
+  };
+</script>

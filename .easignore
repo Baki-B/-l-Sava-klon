@@ -1,0 +1,46 @@
+# EAS derlemesine YÜKLENMEYECEK dosyalar.
+#
+# ⚠ NEDEN VAR: `onizleme/` 71 MB, `dist/` 8.5 MB. İkisi de uygulamanın içine girmiyor
+# (Metro yalnızca `import` edilen dosyaları paketliyor) ama EAS derleme sunucusuna
+# YÜKLENİYOR — yani her derlemede boşuna 80 MB gidiyor ve derleme yavaşlıyor.
+#
+# `.easignore` varsa EAS `.gitignore`'u YOK SAYAR, o yüzden buradaki liste .gitignore'un
+# içeriğini de tekrar etmek zorunda. Bir satır eksik kalırsa o klasör yüklenmeye başlar.
+
+# ---- .gitignore'un tekrarı (yukarıdaki kural gereği) ----
+node_modules/
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.DS_Store
+*.pem
+.env*.local
+*.tsbuildinfo
+/ios
+/android
+
+# ---- yalnızca derlemeye gitmeyecekler ----
+# Geliştirme sırasında üretilen ön izleme HTML/PNG'leri — oyunun çalışması için gereksiz.
+onizleme/
+# Ölçüm betikleri ve raporları: geliştirme aracı, uygulama değil.
+scripts/
+testler/
+docs/
+veri/*.md
+# Ham harita kaynakları (geoBoundaries, ilçe tabloları; 39 MB): yalnızca veri üreten betikler
+# okuyor, uygulama hiçbirini içe aktarmıyor (2026-09-25).
+veri/ham/
+.claude/
+CLAUDE.md

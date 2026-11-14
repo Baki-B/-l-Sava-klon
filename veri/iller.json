@@ -1,0 +1,1136 @@
+{
+  "01": {
+    "kod": "01",
+    "ad": "Adana",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 7,
+      "ekonomi": 6,
+      "egitim": 3,
+      "sanayi": 5,
+      "moral": 4
+    }
+  },
+  "02": {
+    "kod": "02",
+    "ad": "Adıyaman",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "03": {
+    "kod": "03",
+    "ad": "Afyonkarahisar",
+    "bolge": "Ege",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "04": {
+    "kod": "04",
+    "ad": "Ağrı",
+    "bolge": "Doğu Anadolu",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 1,
+      "sanayi": 1,
+      "moral": 3
+    }
+  },
+  "05": {
+    "kod": "05",
+    "ad": "Amasya",
+    "bolge": "Karadeniz",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "06": {
+    "kod": "06",
+    "ad": "Ankara",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 8,
+      "ekonomi": 9,
+      "egitim": 10,
+      "sanayi": 9,
+      "moral": 7
+    }
+  },
+  "07": {
+    "kod": "07",
+    "ad": "Antalya",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 7,
+      "ekonomi": 7,
+      "egitim": 6,
+      "sanayi": 6,
+      "moral": 6
+    }
+  },
+  "08": {
+    "kod": "08",
+    "ad": "Artvin",
+    "bolge": "Karadeniz",
+    "arazi": "daglik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 2,
+      "ekonomi": 2,
+      "egitim": 4,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "09": {
+    "kod": "09",
+    "ad": "Aydın",
+    "bolge": "Ege",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 5,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "10": {
+    "kod": "10",
+    "ad": "Balıkesir",
+    "bolge": "Marmara",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 5,
+      "egitim": 5,
+      "sanayi": 5,
+      "moral": 5
+    }
+  },
+  "11": {
+    "kod": "11",
+    "ad": "Bilecik",
+    "bolge": "Marmara",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 6,
+      "sanayi": 6,
+      "moral": 5
+    }
+  },
+  "12": {
+    "kod": "12",
+    "ad": "Bingöl",
+    "bolge": "Doğu Anadolu",
+    "arazi": "daglik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 2,
+      "sanayi": 2,
+      "moral": 3
+    }
+  },
+  "13": {
+    "kod": "13",
+    "ad": "Bitlis",
+    "bolge": "Doğu Anadolu",
+    "arazi": "daglik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 2,
+      "sanayi": 1,
+      "moral": 3
+    }
+  },
+  "14": {
+    "kod": "14",
+    "ad": "Bolu",
+    "bolge": "Karadeniz",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 4,
+      "egitim": 6,
+      "sanayi": 5,
+      "moral": 5
+    }
+  },
+  "15": {
+    "kod": "15",
+    "ad": "Burdur",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 4,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "16": {
+    "kod": "16",
+    "ad": "Bursa",
+    "bolge": "Marmara",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 7,
+      "ekonomi": 7,
+      "egitim": 5,
+      "sanayi": 8,
+      "moral": 5
+    }
+  },
+  "17": {
+    "kod": "17",
+    "ad": "Çanakkale",
+    "bolge": "Marmara",
+    "arazi": "tepelik",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 5,
+      "sanayi": 4,
+      "moral": 5
+    }
+  },
+  "18": {
+    "kod": "18",
+    "ad": "Çankırı",
+    "bolge": "İç Anadolu",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 5,
+      "sanayi": 3,
+      "moral": 5
+    }
+  },
+  "19": {
+    "kod": "19",
+    "ad": "Çorum",
+    "bolge": "Karadeniz",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "20": {
+    "kod": "20",
+    "ad": "Denizli",
+    "bolge": "Ege",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 5,
+      "egitim": 4,
+      "sanayi": 6,
+      "moral": 4
+    }
+  },
+  "21": {
+    "kod": "21",
+    "ad": "Diyarbakır",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 5,
+      "egitim": 2,
+      "sanayi": 4,
+      "moral": 3
+    }
+  },
+  "22": {
+    "kod": "22",
+    "ad": "Edirne",
+    "bolge": "Marmara",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "23": {
+    "kod": "23",
+    "ad": "Elazığ",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "24": {
+    "kod": "24",
+    "ad": "Erzincan",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 4,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "25": {
+    "kod": "25",
+    "ad": "Erzurum",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "26": {
+    "kod": "26",
+    "ad": "Eskişehir",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 5,
+      "egitim": 6,
+      "sanayi": 6,
+      "moral": 5
+    }
+  },
+  "27": {
+    "kod": "27",
+    "ad": "Gaziantep",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 7,
+      "ekonomi": 6,
+      "egitim": 3,
+      "sanayi": 6,
+      "moral": 4
+    }
+  },
+  "28": {
+    "kod": "28",
+    "ad": "Giresun",
+    "bolge": "Karadeniz",
+    "arazi": "daglik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "29": {
+    "kod": "29",
+    "ad": "Gümüşhane",
+    "bolge": "Karadeniz",
+    "arazi": "daglik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 2,
+      "ekonomi": 2,
+      "egitim": 2,
+      "sanayi": 2,
+      "moral": 3
+    }
+  },
+  "30": {
+    "kod": "30",
+    "ad": "Hakkari",
+    "bolge": "Doğu Anadolu",
+    "arazi": "daglik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 3,
+      "sanayi": 1,
+      "moral": 4
+    }
+  },
+  "31": {
+    "kod": "31",
+    "ad": "Hatay",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 5,
+      "egitim": 3,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "32": {
+    "kod": "32",
+    "ad": "Isparta",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "33": {
+    "kod": "33",
+    "ad": "Mersin",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 6,
+      "egitim": 5,
+      "sanayi": 5,
+      "moral": 5
+    }
+  },
+  "34": {
+    "kod": "34",
+    "ad": "İstanbul",
+    "bolge": "Marmara",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 10,
+      "ekonomi": 10,
+      "egitim": 10,
+      "sanayi": 10,
+      "moral": 7
+    }
+  },
+  "35": {
+    "kod": "35",
+    "ad": "İzmir",
+    "bolge": "Ege",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 8,
+      "ekonomi": 8,
+      "egitim": 6,
+      "sanayi": 7,
+      "moral": 5
+    }
+  },
+  "36": {
+    "kod": "36",
+    "ad": "Kars",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 3,
+      "sanayi": 2,
+      "moral": 4
+    }
+  },
+  "37": {
+    "kod": "37",
+    "ad": "Kastamonu",
+    "bolge": "Karadeniz",
+    "arazi": "daglik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "38": {
+    "kod": "38",
+    "ad": "Kayseri",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 5,
+      "egitim": 4,
+      "sanayi": 6,
+      "moral": 4
+    }
+  },
+  "39": {
+    "kod": "39",
+    "ad": "Kırklareli",
+    "bolge": "Marmara",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 6,
+      "sanayi": 5,
+      "moral": 5
+    }
+  },
+  "40": {
+    "kod": "40",
+    "ad": "Kırşehir",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "41": {
+    "kod": "41",
+    "ad": "Kocaeli",
+    "bolge": "Marmara",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 7,
+      "ekonomi": 7,
+      "egitim": 10,
+      "sanayi": 10,
+      "moral": 7
+    }
+  },
+  "42": {
+    "kod": "42",
+    "ad": "Konya",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 7,
+      "ekonomi": 6,
+      "egitim": 4,
+      "sanayi": 5,
+      "moral": 4
+    }
+  },
+  "43": {
+    "kod": "43",
+    "ad": "Kütahya",
+    "bolge": "Ege",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "44": {
+    "kod": "44",
+    "ad": "Malatya",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 4,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "45": {
+    "kod": "45",
+    "ad": "Manisa",
+    "bolge": "Ege",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 6,
+      "egitim": 5,
+      "sanayi": 6,
+      "moral": 5
+    }
+  },
+  "46": {
+    "kod": "46",
+    "ad": "Kahramanmaraş",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 5,
+      "egitim": 3,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "47": {
+    "kod": "47",
+    "ad": "Mardin",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "tepelik",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 4,
+      "egitim": 2,
+      "sanayi": 3,
+      "moral": 3
+    }
+  },
+  "48": {
+    "kod": "48",
+    "ad": "Muğla",
+    "bolge": "Ege",
+    "arazi": "tepelik",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 5,
+      "egitim": 6,
+      "sanayi": 5,
+      "moral": 5
+    }
+  },
+  "49": {
+    "kod": "49",
+    "ad": "Muş",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 2,
+      "sanayi": 1,
+      "moral": 3
+    }
+  },
+  "50": {
+    "kod": "50",
+    "ad": "Nevşehir",
+    "bolge": "İç Anadolu",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 4,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "51": {
+    "kod": "51",
+    "ad": "Niğde",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 4,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "52": {
+    "kod": "52",
+    "ad": "Ordu",
+    "bolge": "Karadeniz",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "53": {
+    "kod": "53",
+    "ad": "Rize",
+    "bolge": "Karadeniz",
+    "arazi": "daglik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "54": {
+    "kod": "54",
+    "ad": "Sakarya",
+    "bolge": "Marmara",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 5,
+      "egitim": 5,
+      "sanayi": 7,
+      "moral": 5
+    }
+  },
+  "55": {
+    "kod": "55",
+    "ad": "Samsun",
+    "bolge": "Karadeniz",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 5,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "56": {
+    "kod": "56",
+    "ad": "Siirt",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 2,
+      "sanayi": 1,
+      "moral": 3
+    }
+  },
+  "57": {
+    "kod": "57",
+    "ad": "Sinop",
+    "bolge": "Karadeniz",
+    "arazi": "daglik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 2,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "58": {
+    "kod": "58",
+    "ad": "Sivas",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "59": {
+    "kod": "59",
+    "ad": "Tekirdağ",
+    "bolge": "Marmara",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 6,
+      "ekonomi": 6,
+      "egitim": 7,
+      "sanayi": 7,
+      "moral": 6
+    }
+  },
+  "60": {
+    "kod": "60",
+    "ad": "Tokat",
+    "bolge": "Karadeniz",
+    "arazi": "ova",
+    "parcaSayisi": 3,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 2,
+      "sanayi": 3,
+      "moral": 3
+    }
+  },
+  "61": {
+    "kod": "61",
+    "ad": "Trabzon",
+    "bolge": "Karadeniz",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "62": {
+    "kod": "62",
+    "ad": "Tunceli",
+    "bolge": "Doğu Anadolu",
+    "arazi": "daglik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 1,
+      "ekonomi": 2,
+      "egitim": 5,
+      "sanayi": 3,
+      "moral": 5
+    }
+  },
+  "63": {
+    "kod": "63",
+    "ad": "Şanlıurfa",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 7,
+      "ekonomi": 5,
+      "egitim": 1,
+      "sanayi": 3,
+      "moral": 3
+    }
+  },
+  "64": {
+    "kod": "64",
+    "ad": "Uşak",
+    "bolge": "Ege",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 4,
+      "sanayi": 5,
+      "moral": 4
+    }
+  },
+  "65": {
+    "kod": "65",
+    "ad": "Van",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 4,
+    "statlar": {
+      "nufus": 5,
+      "ekonomi": 4,
+      "egitim": 2,
+      "sanayi": 2,
+      "moral": 3
+    }
+  },
+  "66": {
+    "kod": "66",
+    "ad": "Yozgat",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 3,
+      "sanayi": 2,
+      "moral": 4
+    }
+  },
+  "67": {
+    "kod": "67",
+    "ad": "Zonguldak",
+    "bolge": "Karadeniz",
+    "arazi": "tepelik",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 4,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "68": {
+    "kod": "68",
+    "ad": "Aksaray",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "69": {
+    "kod": "69",
+    "ad": "Bayburt",
+    "bolge": "Karadeniz",
+    "arazi": "daglik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 1,
+      "ekonomi": 1,
+      "egitim": 3,
+      "sanayi": 2,
+      "moral": 4
+    }
+  },
+  "70": {
+    "kod": "70",
+    "ad": "Karaman",
+    "bolge": "İç Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 5,
+      "sanayi": 4,
+      "moral": 5
+    }
+  },
+  "71": {
+    "kod": "71",
+    "ad": "Kırıkkale",
+    "bolge": "İç Anadolu",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 5,
+      "sanayi": 3,
+      "moral": 5
+    }
+  },
+  "72": {
+    "kod": "72",
+    "ad": "Batman",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 3,
+      "egitim": 2,
+      "sanayi": 3,
+      "moral": 3
+    }
+  },
+  "73": {
+    "kod": "73",
+    "ad": "Şırnak",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 2,
+      "moral": 4
+    }
+  },
+  "74": {
+    "kod": "74",
+    "ad": "Bartın",
+    "bolge": "Karadeniz",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 2,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "75": {
+    "kod": "75",
+    "ad": "Ardahan",
+    "bolge": "Doğu Anadolu",
+    "arazi": "daglik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 1,
+      "ekonomi": 1,
+      "egitim": 4,
+      "sanayi": 1,
+      "moral": 4
+    }
+  },
+  "76": {
+    "kod": "76",
+    "ad": "Iğdır",
+    "bolge": "Doğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 2,
+      "egitim": 2,
+      "sanayi": 1,
+      "moral": 3
+    }
+  },
+  "77": {
+    "kod": "77",
+    "ad": "Yalova",
+    "bolge": "Marmara",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 6,
+      "sanayi": 4,
+      "moral": 5
+    }
+  },
+  "78": {
+    "kod": "78",
+    "ad": "Karabük",
+    "bolge": "Karadeniz",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 3,
+      "ekonomi": 3,
+      "egitim": 4,
+      "sanayi": 4,
+      "moral": 4
+    }
+  },
+  "79": {
+    "kod": "79",
+    "ad": "Kilis",
+    "bolge": "Güneydoğu Anadolu",
+    "arazi": "ova",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 2,
+      "ekonomi": 1,
+      "egitim": 2,
+      "sanayi": 2,
+      "moral": 3
+    }
+  },
+  "80": {
+    "kod": "80",
+    "ad": "Osmaniye",
+    "bolge": "Akdeniz",
+    "arazi": "ova",
+    "parcaSayisi": 2,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 3,
+      "sanayi": 3,
+      "moral": 4
+    }
+  },
+  "81": {
+    "kod": "81",
+    "ad": "Düzce",
+    "bolge": "Karadeniz",
+    "arazi": "tepelik",
+    "parcaSayisi": 1,
+    "statlar": {
+      "nufus": 4,
+      "ekonomi": 4,
+      "egitim": 5,
+      "sanayi": 4,
+      "moral": 5
+    }
+  }
+}

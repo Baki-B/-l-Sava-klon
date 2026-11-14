@@ -1,0 +1,3023 @@
+[
+ {
+  "kod": "34",
+  "ilAd": "İstanbul",
+  "parcaNo": 1,
+  "parcaAd": "Suriçi ve Galata",
+  "ilceler": [
+   "Fatih",
+   "Eyüpsultan",
+   "Zeytinburnu",
+   "Beyoğlu",
+   "Beşiktaş"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.09,
+  "ekonomi": 0.18
+ },
+ {
+  "kod": "34",
+  "ilAd": "İstanbul",
+  "parcaNo": 2,
+  "parcaAd": "Avrupa Yakası",
+  "ilceler": [
+   "Bağcılar",
+   "Bahçelievler",
+   "Güngören",
+   "Esenler",
+   "Sultangazi",
+   "Gaziosmanpaşa",
+   "Bayrampaşa",
+   "Şişli",
+   "Kağıthane",
+   "Küçükçekmece",
+   "Avcılar",
+   "Beylikdüzü",
+   "Esenyurt",
+   "Başakşehir",
+   "Silivri",
+   "Çatalca",
+   "Büyükçekmece",
+   "Arnavutköy"
+  ],
+  "arazi": "ova",
+  "nufus": 0.56,
+  "ekonomi": 0.47
+ },
+ {
+  "kod": "34",
+  "ilAd": "İstanbul",
+  "parcaNo": 3,
+  "parcaAd": "Anadolu Yakası",
+  "ilceler": [
+   "Kadıköy",
+   "Üsküdar",
+   "Ataşehir",
+   "Ümraniye",
+   "Maltepe",
+   "Beykoz",
+   "Kartal",
+   "Pendik",
+   "Tuzla",
+   "Sancaktepe",
+   "Sultanbeyli",
+   "Çekmeköy",
+   "Şile"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.35,
+  "ekonomi": 0.35
+ },
+ {
+  "kod": "16",
+  "ilAd": "Bursa",
+  "parcaNo": 1,
+  "parcaAd": "Bursa Ovası",
+  "ilceler": [
+   "Osmangazi",
+   "Yıldırım",
+   "Nilüfer",
+   "Kestel",
+   "Gürsu"
+  ],
+  "arazi": "ova",
+  "nufus": 0.55,
+  "ekonomi": 0.52
+ },
+ {
+  "kod": "16",
+  "ilAd": "Bursa",
+  "parcaNo": 2,
+  "parcaAd": "Batı Ova",
+  "ilceler": [
+   "Mudanya",
+   "Karacabey",
+   "Mustafakemalpaşa"
+  ],
+  "arazi": "ova",
+  "nufus": 0.13,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "16",
+  "ilAd": "Bursa",
+  "parcaNo": 3,
+  "parcaAd": "Doğu",
+  "ilceler": [
+   "Gemlik",
+   "Orhangazi",
+   "İznik",
+   "İnegöl",
+   "Yenişehir"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.28,
+  "ekonomi": 0.31
+ },
+ {
+  "kod": "16",
+  "ilAd": "Bursa",
+  "parcaNo": 4,
+  "parcaAd": "Uludağ Güneyi",
+  "ilceler": [
+   "Orhaneli",
+   "Keles",
+   "Büyükorhan",
+   "Harmancık"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.04,
+  "ekonomi": 0.04
+ },
+ {
+  "kod": "10",
+  "ilAd": "Balıkesir",
+  "parcaNo": 1,
+  "parcaAd": "Kuzey — Marmara Kıyısı",
+  "ilceler": [
+   "Bandırma",
+   "Erdek",
+   "Marmara",
+   "Gönen",
+   "Manyas",
+   "Susurluk"
+  ],
+  "arazi": "ova",
+  "nufus": 0.3,
+  "ekonomi": 0.33
+ },
+ {
+  "kod": "10",
+  "ilAd": "Balıkesir",
+  "parcaNo": 2,
+  "parcaAd": "Batı — Ege Kıyısı",
+  "ilceler": [
+   "Edremit",
+   "Ayvalık",
+   "Burhaniye",
+   "Havran",
+   "Gömeç",
+   "İvrindi"
+  ],
+  "arazi": "ova",
+  "nufus": 0.27,
+  "ekonomi": 0.27
+ },
+ {
+  "kod": "10",
+  "ilAd": "Balıkesir",
+  "parcaNo": 3,
+  "parcaAd": "Orta",
+  "ilceler": [
+   "Karesi",
+   "Altıeylül",
+   "Kepsut",
+   "Savaştepe",
+   "Balya"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.28,
+  "ekonomi": 0.28
+ },
+ {
+  "kod": "10",
+  "ilAd": "Balıkesir",
+  "parcaNo": 4,
+  "parcaAd": "Doğu Dağlık",
+  "ilceler": [
+   "Dursunbey",
+   "Sındırgı",
+   "Bigadiç"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.15,
+  "ekonomi": 0.12
+ },
+ {
+  "kod": "41",
+  "ilAd": "Kocaeli",
+  "parcaNo": 1,
+  "parcaAd": "Gebze Sanayi",
+  "ilceler": [
+   "Gebze",
+   "Darıca",
+   "Çayırova",
+   "Dilovası",
+   "Körfez"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.45,
+  "ekonomi": 0.52
+ },
+ {
+  "kod": "41",
+  "ilAd": "Kocaeli",
+  "parcaNo": 2,
+  "parcaAd": "İzmit",
+  "ilceler": [
+   "İzmit",
+   "Derince",
+   "Kandıra"
+  ],
+  "arazi": "ova",
+  "nufus": 0.31,
+  "ekonomi": 0.28
+ },
+ {
+  "kod": "41",
+  "ilAd": "Kocaeli",
+  "parcaNo": 3,
+  "parcaAd": "Güney Kıyı",
+  "ilceler": [
+   "Gölcük",
+   "Başiskele",
+   "Kartepe",
+   "Karamürsel"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.24,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "59",
+  "ilAd": "Tekirdağ",
+  "parcaNo": 1,
+  "parcaAd": "Çorlu-Çerkezköy Sanayi",
+  "ilceler": [
+   "Çorlu",
+   "Ergene",
+   "Çerkezköy",
+   "Kapaklı",
+   "Saray"
+  ],
+  "arazi": "ova",
+  "nufus": 0.53,
+  "ekonomi": 0.62
+ },
+ {
+  "kod": "59",
+  "ilAd": "Tekirdağ",
+  "parcaNo": 2,
+  "parcaAd": "Süleymanpaşa Kıyı",
+  "ilceler": [
+   "Süleymanpaşa",
+   "Muratlı",
+   "Marmaraereğlisi"
+  ],
+  "arazi": "ova",
+  "nufus": 0.25,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "59",
+  "ilAd": "Tekirdağ",
+  "parcaNo": 3,
+  "parcaAd": "Güney Trakya",
+  "ilceler": [
+   "Malkara",
+   "Hayrabolu",
+   "Şarköy"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.22,
+  "ekonomi": 0.18
+ },
+ {
+  "kod": "17",
+  "ilAd": "Çanakkale",
+  "parcaNo": 1,
+  "parcaAd": "Gelibolu Yarımadası",
+  "ilceler": [
+   "Gelibolu",
+   "Eceabat"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.15,
+  "ekonomi": 0.14
+ },
+ {
+  "kod": "17",
+  "ilAd": "Çanakkale",
+  "parcaNo": 2,
+  "parcaAd": "Biga-Çan",
+  "ilceler": [
+   "Biga",
+   "Çan",
+   "Yenice",
+   "Lapseki"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.4,
+  "ekonomi": 0.45
+ },
+ {
+  "kod": "17",
+  "ilAd": "Çanakkale",
+  "parcaNo": 3,
+  "parcaAd": "Çanakkale ve Kaz Dağları",
+  "ilceler": [
+   "Merkez",
+   "Ezine",
+   "Ayvacık",
+   "Bayramiç",
+   "Bozcaada",
+   "Gökçeada"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.45,
+  "ekonomi": 0.41
+ },
+ {
+  "kod": "54",
+  "ilAd": "Sakarya",
+  "parcaNo": 1,
+  "parcaAd": "Adapazarı Ovası",
+  "ilceler": [
+   "Adapazarı",
+   "Serdivan",
+   "Erenler",
+   "Arifiye",
+   "Söğütlü",
+   "Ferizli"
+  ],
+  "arazi": "ova",
+  "nufus": 0.5,
+  "ekonomi": 0.5
+ },
+ {
+  "kod": "54",
+  "ilAd": "Sakarya",
+  "parcaNo": 2,
+  "parcaAd": "Kıyı ve Doğu",
+  "ilceler": [
+   "Karasu",
+   "Kocaali",
+   "Kaynarca",
+   "Hendek",
+   "Akyazı",
+   "Karapürçek"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.29,
+  "ekonomi": 0.28
+ },
+ {
+  "kod": "54",
+  "ilAd": "Sakarya",
+  "parcaNo": 3,
+  "parcaAd": "Sapanca-Geyve",
+  "ilceler": [
+   "Sapanca",
+   "Geyve",
+   "Pamukova",
+   "Taraklı"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.21,
+  "ekonomi": 0.22
+ },
+ {
+  "kod": "22",
+  "ilAd": "Edirne",
+  "parcaNo": 1,
+  "parcaAd": "Edirne ve Meriç",
+  "ilceler": [
+   "Merkez",
+   "Havsa",
+   "Lalapaşa",
+   "Süloğlu",
+   "Uzunköprü",
+   "Meriç"
+  ],
+  "arazi": "ova",
+  "nufus": 0.67,
+  "ekonomi": 0.65
+ },
+ {
+  "kod": "22",
+  "ilAd": "Edirne",
+  "parcaNo": 2,
+  "parcaAd": "Keşan-İpsala",
+  "ilceler": [
+   "Keşan",
+   "Enez",
+   "İpsala"
+  ],
+  "arazi": "ova",
+  "nufus": 0.33,
+  "ekonomi": 0.35
+ },
+ {
+  "kod": "39",
+  "ilAd": "Kırklareli",
+  "parcaNo": 1,
+  "parcaAd": "Ergene Ovası",
+  "ilceler": [
+   "Lüleburgaz",
+   "Babaeski",
+   "Pehlivanköy"
+  ],
+  "arazi": "ova",
+  "nufus": 0.48,
+  "ekonomi": 0.55
+ },
+ {
+  "kod": "39",
+  "ilAd": "Kırklareli",
+  "parcaNo": 2,
+  "parcaAd": "Istranca",
+  "ilceler": [
+   "Merkez",
+   "Kofçaz",
+   "Pınarhisar",
+   "Vize",
+   "Demirköy"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.52,
+  "ekonomi": 0.45
+ },
+ {
+  "kod": "11",
+  "ilAd": "Bilecik",
+  "parcaNo": 1,
+  "parcaAd": "Bilecik",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "77",
+  "ilAd": "Yalova",
+  "parcaNo": 1,
+  "parcaAd": "Yalova",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "35",
+  "ilAd": "İzmir",
+  "parcaNo": 1,
+  "parcaAd": "İzmir Metropol",
+  "ilceler": [
+   "Konak",
+   "Bornova",
+   "Buca",
+   "Karşıyaka",
+   "Bayraklı",
+   "Çiğli",
+   "Karabağlar",
+   "Gaziemir",
+   "Balçova",
+   "Narlıdere",
+   "Güzelbahçe"
+  ],
+  "arazi": "ova",
+  "nufus": 0.6,
+  "ekonomi": 0.55
+ },
+ {
+  "kod": "35",
+  "ilAd": "İzmir",
+  "parcaNo": 2,
+  "parcaAd": "Kuzey Kıyı ve Aliağa",
+  "ilceler": [
+   "Bergama",
+   "Dikili",
+   "Kınık",
+   "Aliağa",
+   "Foça",
+   "Menemen"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.16,
+  "ekonomi": 0.21
+ },
+ {
+  "kod": "35",
+  "ilAd": "İzmir",
+  "parcaNo": 3,
+  "parcaAd": "Çeşme Yarımadası",
+  "ilceler": [
+   "Çeşme",
+   "Urla",
+   "Karaburun",
+   "Seferihisar"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.06,
+  "ekonomi": 0.07
+ },
+ {
+  "kod": "35",
+  "ilAd": "İzmir",
+  "parcaNo": 4,
+  "parcaAd": "Küçük Menderes",
+  "ilceler": [
+   "Menderes",
+   "Torbalı",
+   "Selçuk",
+   "Kemalpaşa",
+   "Bayındır",
+   "Ödemiş",
+   "Tire",
+   "Kiraz",
+   "Beydağ"
+  ],
+  "arazi": "ova",
+  "nufus": 0.18,
+  "ekonomi": 0.17
+ },
+ {
+  "kod": "48",
+  "ilAd": "Muğla",
+  "parcaNo": 1,
+  "parcaAd": "Menteşe-Milas",
+  "ilceler": [
+   "Menteşe",
+   "Ula",
+   "Kavaklıdere",
+   "Milas",
+   "Yatağan"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.3,
+  "ekonomi": 0.3
+ },
+ {
+  "kod": "48",
+  "ilAd": "Muğla",
+  "parcaNo": 2,
+  "parcaAd": "Bodrum",
+  "ilceler": [
+   "Bodrum"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.2,
+  "ekonomi": 0.24
+ },
+ {
+  "kod": "48",
+  "ilAd": "Muğla",
+  "parcaNo": 3,
+  "parcaAd": "Marmaris-Datça",
+  "ilceler": [
+   "Marmaris",
+   "Datça",
+   "Köyceğiz"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.15,
+  "ekonomi": 0.16
+ },
+ {
+  "kod": "48",
+  "ilAd": "Muğla",
+  "parcaNo": 4,
+  "parcaAd": "Fethiye",
+  "ilceler": [
+   "Fethiye",
+   "Seydikemer",
+   "Ortaca",
+   "Dalaman"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.35,
+  "ekonomi": 0.3
+ },
+ {
+  "kod": "45",
+  "ilAd": "Manisa",
+  "parcaNo": 1,
+  "parcaAd": "Gediz Ovası",
+  "ilceler": [
+   "Şehzadeler",
+   "Yunusemre",
+   "Saruhanlı",
+   "Turgutlu",
+   "Ahmetli",
+   "Salihli",
+   "Alaşehir",
+   "Sarıgöl",
+   "Gölmarmara"
+  ],
+  "arazi": "ova",
+  "nufus": 0.65,
+  "ekonomi": 0.68
+ },
+ {
+  "kod": "45",
+  "ilAd": "Manisa",
+  "parcaNo": 2,
+  "parcaAd": "Akhisar-Soma",
+  "ilceler": [
+   "Akhisar",
+   "Kırkağaç",
+   "Soma"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.24,
+  "ekonomi": 0.23
+ },
+ {
+  "kod": "45",
+  "ilAd": "Manisa",
+  "parcaNo": 3,
+  "parcaAd": "Doğu Dağlık",
+  "ilceler": [
+   "Demirci",
+   "Gördes",
+   "Kula",
+   "Selendi",
+   "Köprübaşı"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.11,
+  "ekonomi": 0.09
+ },
+ {
+  "kod": "09",
+  "ilAd": "Aydın",
+  "parcaNo": 1,
+  "parcaAd": "Menderes Ovası",
+  "ilceler": [
+   "Efeler",
+   "İncirliova",
+   "Köşk",
+   "Germencik",
+   "Nazilli",
+   "Sultanhisar",
+   "Kuyucak",
+   "Buharkent",
+   "Yenipazar"
+  ],
+  "arazi": "ova",
+  "nufus": 0.55,
+  "ekonomi": 0.52
+ },
+ {
+  "kod": "09",
+  "ilAd": "Aydın",
+  "parcaNo": 2,
+  "parcaAd": "Söke-Kuşadası",
+  "ilceler": [
+   "Söke",
+   "Kuşadası",
+   "Didim",
+   "Koçarlı"
+  ],
+  "arazi": "ova",
+  "nufus": 0.35,
+  "ekonomi": 0.4
+ },
+ {
+  "kod": "09",
+  "ilAd": "Aydın",
+  "parcaNo": 3,
+  "parcaAd": "Çine Dağlık",
+  "ilceler": [
+   "Çine",
+   "Karacasu",
+   "Karpuzlu",
+   "Bozdoğan"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.1,
+  "ekonomi": 0.08
+ },
+ {
+  "kod": "20",
+  "ilAd": "Denizli",
+  "parcaNo": 1,
+  "parcaAd": "Denizli Ovası",
+  "ilceler": [
+   "Merkezefendi",
+   "Pamukkale",
+   "Honaz",
+   "Sarayköy",
+   "Buldan",
+   "Babadağ",
+   "Güney"
+  ],
+  "arazi": "ova",
+  "nufus": 0.65,
+  "ekonomi": 0.7
+ },
+ {
+  "kod": "20",
+  "ilAd": "Denizli",
+  "parcaNo": 2,
+  "parcaAd": "Çivril-Çal",
+  "ilceler": [
+   "Çivril",
+   "Çal",
+   "Bekilli",
+   "Baklan",
+   "Bozkurt",
+   "Çardak"
+  ],
+  "arazi": "ova",
+  "nufus": 0.15,
+  "ekonomi": 0.14
+ },
+ {
+  "kod": "20",
+  "ilAd": "Denizli",
+  "parcaNo": 3,
+  "parcaAd": "Güney Dağlık",
+  "ilceler": [
+   "Acıpayam",
+   "Tavas",
+   "Kale",
+   "Çameli",
+   "Serinhisar",
+   "Beyağaç"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.2,
+  "ekonomi": 0.16
+ },
+ {
+  "kod": "43",
+  "ilAd": "Kütahya",
+  "parcaNo": 1,
+  "parcaAd": "Kütahya Ovası",
+  "ilceler": [
+   "Merkez",
+   "Altıntaş",
+   "Aslanapa",
+   "Çavdarhisar",
+   "Dumlupınar"
+  ],
+  "arazi": "ova",
+  "nufus": 0.5,
+  "ekonomi": 0.52
+ },
+ {
+  "kod": "43",
+  "ilAd": "Kütahya",
+  "parcaNo": 2,
+  "parcaAd": "Tavşanlı-Emet",
+  "ilceler": [
+   "Tavşanlı",
+   "Emet",
+   "Domaniç",
+   "Hisarcık"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.25,
+  "ekonomi": 0.28
+ },
+ {
+  "kod": "43",
+  "ilAd": "Kütahya",
+  "parcaNo": 3,
+  "parcaAd": "Simav-Gediz",
+  "ilceler": [
+   "Simav",
+   "Gediz",
+   "Şaphane",
+   "Pazarlar"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.25,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "03",
+  "ilAd": "Afyonkarahisar",
+  "parcaNo": 1,
+  "parcaAd": "Afyon Ovası",
+  "ilceler": [
+   "Merkez",
+   "İscehisar",
+   "Çobanlar",
+   "Sinanpaşa",
+   "İhsaniye"
+  ],
+  "arazi": "ova",
+  "nufus": 0.45,
+  "ekonomi": 0.48
+ },
+ {
+  "kod": "03",
+  "ilAd": "Afyonkarahisar",
+  "parcaNo": 2,
+  "parcaAd": "Bolvadin-Emirdağ",
+  "ilceler": [
+   "Bolvadin",
+   "Çay",
+   "Sultandağı",
+   "Bayat",
+   "Emirdağ"
+  ],
+  "arazi": "ova",
+  "nufus": 0.25,
+  "ekonomi": 0.25
+ },
+ {
+  "kod": "03",
+  "ilAd": "Afyonkarahisar",
+  "parcaNo": 3,
+  "parcaAd": "Sandıklı-Dinar",
+  "ilceler": [
+   "Sandıklı",
+   "Şuhut",
+   "Hocalar",
+   "Kızılören",
+   "Dinar",
+   "Dazkırı",
+   "Başmakçı",
+   "Evciler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.3,
+  "ekonomi": 0.27
+ },
+ {
+  "kod": "64",
+  "ilAd": "Uşak",
+  "parcaNo": 1,
+  "parcaAd": "Uşak",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "07",
+  "ilAd": "Antalya",
+  "parcaNo": 1,
+  "parcaAd": "Antalya Ovası",
+  "ilceler": [
+   "Muratpaşa",
+   "Kepez",
+   "Konyaaltı",
+   "Döşemealtı",
+   "Aksu"
+  ],
+  "arazi": "ova",
+  "nufus": 0.45,
+  "ekonomi": 0.45
+ },
+ {
+  "kod": "07",
+  "ilAd": "Antalya",
+  "parcaNo": 2,
+  "parcaAd": "Alanya",
+  "ilceler": [
+   "Alanya",
+   "Gazipaşa"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.16,
+  "ekonomi": 0.17
+ },
+ {
+  "kod": "07",
+  "ilAd": "Antalya",
+  "parcaNo": 3,
+  "parcaAd": "Manavgat-Serik",
+  "ilceler": [
+   "Manavgat",
+   "Serik"
+  ],
+  "arazi": "ova",
+  "nufus": 0.16,
+  "ekonomi": 0.17
+ },
+ {
+  "kod": "07",
+  "ilAd": "Antalya",
+  "parcaNo": 4,
+  "parcaAd": "Batı Kıyı",
+  "ilceler": [
+   "Kemer",
+   "Kumluca",
+   "Finike",
+   "Demre",
+   "Kaş"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.13,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "07",
+  "ilAd": "Antalya",
+  "parcaNo": 5,
+  "parcaAd": "Toros İçi",
+  "ilceler": [
+   "Korkuteli",
+   "Elmalı",
+   "Akseki",
+   "İbradı",
+   "Gündoğmuş"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.1,
+  "ekonomi": 0.08
+ },
+ {
+  "kod": "33",
+  "ilAd": "Mersin",
+  "parcaNo": 1,
+  "parcaAd": "Mersin Kenti",
+  "ilceler": [
+   "Akdeniz",
+   "Toroslar",
+   "Yenişehir",
+   "Mezitli"
+  ],
+  "arazi": "ova",
+  "nufus": 0.5,
+  "ekonomi": 0.5
+ },
+ {
+  "kod": "33",
+  "ilAd": "Mersin",
+  "parcaNo": 2,
+  "parcaAd": "Tarsus",
+  "ilceler": [
+   "Tarsus",
+   "Çamlıyayla"
+  ],
+  "arazi": "ova",
+  "nufus": 0.2,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "33",
+  "ilAd": "Mersin",
+  "parcaNo": 3,
+  "parcaAd": "Erdemli-Silifke",
+  "ilceler": [
+   "Erdemli",
+   "Silifke",
+   "Mut"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.21,
+  "ekonomi": 0.21
+ },
+ {
+  "kod": "33",
+  "ilAd": "Mersin",
+  "parcaNo": 4,
+  "parcaAd": "Anamur",
+  "ilceler": [
+   "Anamur",
+   "Bozyazı",
+   "Aydıncık",
+   "Gülnar"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.09,
+  "ekonomi": 0.09
+ },
+ {
+  "kod": "01",
+  "ilAd": "Adana",
+  "parcaNo": 1,
+  "parcaAd": "Çukurova Kenti",
+  "ilceler": [
+   "Seyhan",
+   "Yüreğir",
+   "Çukurova",
+   "Sarıçam"
+  ],
+  "arazi": "ova",
+  "nufus": 0.58,
+  "ekonomi": 0.55
+ },
+ {
+  "kod": "01",
+  "ilAd": "Adana",
+  "parcaNo": 2,
+  "parcaAd": "Ceyhan Ovası",
+  "ilceler": [
+   "Ceyhan",
+   "İmamoğlu",
+   "Karataş",
+   "Yumurtalık"
+  ],
+  "arazi": "ova",
+  "nufus": 0.2,
+  "ekonomi": 0.22
+ },
+ {
+  "kod": "01",
+  "ilAd": "Adana",
+  "parcaNo": 3,
+  "parcaAd": "Kozan-Pozantı",
+  "ilceler": [
+   "Kozan",
+   "Aladağ",
+   "Karaisalı",
+   "Pozantı"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.18,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "01",
+  "ilAd": "Adana",
+  "parcaNo": 4,
+  "parcaAd": "Kuzey Toros",
+  "ilceler": [
+   "Feke",
+   "Saimbeyli",
+   "Tufanbeyli"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.04,
+  "ekonomi": 0.03
+ },
+ {
+  "kod": "31",
+  "ilAd": "Hatay",
+  "parcaNo": 1,
+  "parcaAd": "Antakya ve Amik",
+  "ilceler": [
+   "Antakya",
+   "Defne",
+   "Samandağ",
+   "Altınözü",
+   "Yayladağı",
+   "Kırıkhan",
+   "Reyhanlı",
+   "Kumlu",
+   "Hassa"
+  ],
+  "arazi": "ova",
+  "nufus": 0.58,
+  "ekonomi": 0.49
+ },
+ {
+  "kod": "31",
+  "ilAd": "Hatay",
+  "parcaNo": 2,
+  "parcaAd": "İskenderun Sanayi",
+  "ilceler": [
+   "İskenderun",
+   "Arsuz",
+   "Belen",
+   "Payas"
+  ],
+  "arazi": "ova",
+  "nufus": 0.3,
+  "ekonomi": 0.38
+ },
+ {
+  "kod": "31",
+  "ilAd": "Hatay",
+  "parcaNo": 3,
+  "parcaAd": "Dörtyol-Erzin",
+  "ilceler": [
+   "Dörtyol",
+   "Erzin"
+  ],
+  "arazi": "ova",
+  "nufus": 0.12,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "46",
+  "ilAd": "Kahramanmaraş",
+  "parcaNo": 1,
+  "parcaAd": "Maraş Ovası",
+  "ilceler": [
+   "Onikişubat",
+   "Dulkadiroğlu",
+   "Türkoğlu",
+   "Pazarcık",
+   "Çağlayancerit"
+  ],
+  "arazi": "ova",
+  "nufus": 0.68,
+  "ekonomi": 0.71
+ },
+ {
+  "kod": "46",
+  "ilAd": "Kahramanmaraş",
+  "parcaNo": 2,
+  "parcaAd": "Elbistan-Afşin",
+  "ilceler": [
+   "Elbistan",
+   "Afşin",
+   "Ekinözü",
+   "Nurhak"
+  ],
+  "arazi": "ova",
+  "nufus": 0.2,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "46",
+  "ilAd": "Kahramanmaraş",
+  "parcaNo": 3,
+  "parcaAd": "Göksun-Andırın",
+  "ilceler": [
+   "Göksun",
+   "Andırın"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.12,
+  "ekonomi": 0.09
+ },
+ {
+  "kod": "32",
+  "ilAd": "Isparta",
+  "parcaNo": 1,
+  "parcaAd": "Isparta Ovası",
+  "ilceler": [
+   "Merkez",
+   "Atabey",
+   "Gönen",
+   "Keçiborlu",
+   "Senirkent",
+   "Uluborlu"
+  ],
+  "arazi": "ova",
+  "nufus": 0.62,
+  "ekonomi": 0.65
+ },
+ {
+  "kod": "32",
+  "ilAd": "Isparta",
+  "parcaNo": 2,
+  "parcaAd": "Eğirdir-Yalvaç",
+  "ilceler": [
+   "Eğirdir",
+   "Sütçüler",
+   "Aksu",
+   "Yalvaç",
+   "Şarkikaraağaç",
+   "Gelendost",
+   "Yenişarbademli"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.38,
+  "ekonomi": 0.35
+ },
+ {
+  "kod": "15",
+  "ilAd": "Burdur",
+  "parcaNo": 1,
+  "parcaAd": "Burdur Ovası",
+  "ilceler": [
+   "Merkez",
+   "Ağlasun",
+   "Çeltikçi",
+   "Bucak"
+  ],
+  "arazi": "ova",
+  "nufus": 0.6,
+  "ekonomi": 0.62
+ },
+ {
+  "kod": "15",
+  "ilAd": "Burdur",
+  "parcaNo": 2,
+  "parcaAd": "Gölhisar-Tefenni",
+  "ilceler": [
+   "Gölhisar",
+   "Yeşilova",
+   "Tefenni",
+   "Karamanlı",
+   "Çavdır",
+   "Altınyayla",
+   "Kemer"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.4,
+  "ekonomi": 0.38
+ },
+ {
+  "kod": "80",
+  "ilAd": "Osmaniye",
+  "parcaNo": 1,
+  "parcaAd": "Osmaniye",
+  "ilceler": [
+   "Merkez",
+   "Toprakkale",
+   "Bahçe",
+   "Hasanbeyli"
+  ],
+  "arazi": "ova",
+  "nufus": 0.55,
+  "ekonomi": 0.6
+ },
+ {
+  "kod": "80",
+  "ilAd": "Osmaniye",
+  "parcaNo": 2,
+  "parcaAd": "Kadirli-Düziçi",
+  "ilceler": [
+   "Kadirli",
+   "Düziçi",
+   "Sumbas"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.45,
+  "ekonomi": 0.4
+ },
+ {
+  "kod": "06",
+  "ilAd": "Ankara",
+  "parcaNo": 1,
+  "parcaAd": "Ankara Doğu",
+  "ilceler": [
+   "Çankaya",
+   "Altındağ",
+   "Keçiören",
+   "Mamak",
+   "Pursaklar",
+   "Gölbaşı"
+  ],
+  "arazi": "ova",
+  "nufus": 0.48,
+  "ekonomi": 0.5
+ },
+ {
+  "kod": "06",
+  "ilAd": "Ankara",
+  "parcaNo": 2,
+  "parcaAd": "Ankara Batı",
+  "ilceler": [
+   "Yenimahalle",
+   "Etimesgut",
+   "Sincan"
+  ],
+  "arazi": "ova",
+  "nufus": 0.32,
+  "ekonomi": 0.28
+ },
+ {
+  "kod": "06",
+  "ilAd": "Ankara",
+  "parcaNo": 3,
+  "parcaAd": "Kuzeybatı",
+  "ilceler": [
+   "Nallıhan",
+   "Beypazarı",
+   "Ayaş",
+   "Güdül",
+   "Kahramankazan",
+   "Çamlıdere",
+   "Kızılcahamam"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.08,
+  "ekonomi": 0.09
+ },
+ {
+  "kod": "06",
+  "ilAd": "Ankara",
+  "parcaNo": 4,
+  "parcaAd": "Kuzeydoğu",
+  "ilceler": [
+   "Çubuk",
+   "Akyurt",
+   "Kalecik",
+   "Elmadağ"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.06,
+  "ekonomi": 0.07
+ },
+ {
+  "kod": "06",
+  "ilAd": "Ankara",
+  "parcaNo": 5,
+  "parcaAd": "Güney Bozkır",
+  "ilceler": [
+   "Polatlı",
+   "Haymana",
+   "Bala",
+   "Şereflikoçhisar",
+   "Evren"
+  ],
+  "arazi": "ova",
+  "nufus": 0.06,
+  "ekonomi": 0.06
+ },
+ {
+  "kod": "42",
+  "ilAd": "Konya",
+  "parcaNo": 1,
+  "parcaAd": "Konya Kenti",
+  "ilceler": [
+   "Selçuklu",
+   "Meram",
+   "Karatay"
+  ],
+  "arazi": "ova",
+  "nufus": 0.6,
+  "ekonomi": 0.6
+ },
+ {
+  "kod": "42",
+  "ilAd": "Konya",
+  "parcaNo": 2,
+  "parcaAd": "Ereğli-Karapınar",
+  "ilceler": [
+   "Ereğli",
+   "Karapınar",
+   "Halkapınar",
+   "Emirgazi"
+  ],
+  "arazi": "ova",
+  "nufus": 0.1,
+  "ekonomi": 0.11
+ },
+ {
+  "kod": "42",
+  "ilAd": "Konya",
+  "parcaNo": 3,
+  "parcaAd": "Beyşehir-Seydişehir",
+  "ilceler": [
+   "Beyşehir",
+   "Seydişehir",
+   "Derebucak",
+   "Hüyük",
+   "Yalıhüyük",
+   "Doğanhisar"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.08,
+  "ekonomi": 0.08
+ },
+ {
+  "kod": "42",
+  "ilAd": "Konya",
+  "parcaNo": 4,
+  "parcaAd": "Kuzey Bozkır",
+  "ilceler": [
+   "Akşehir",
+   "Ilgın",
+   "Derbent",
+   "Tuzlukçu",
+   "Cihanbeyli",
+   "Kulu",
+   "Yunak",
+   "Sarayönü",
+   "Altınekin",
+   "Kadınhanı",
+   "Çeltik"
+  ],
+  "arazi": "ova",
+  "nufus": 0.16,
+  "ekonomi": 0.15
+ },
+ {
+  "kod": "42",
+  "ilAd": "Konya",
+  "parcaNo": 5,
+  "parcaAd": "Güney Toros",
+  "ilceler": [
+   "Çumra",
+   "Bozkır",
+   "Hadim",
+   "Taşkent",
+   "Ahırlı",
+   "Akören",
+   "Güneysınır"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.06,
+  "ekonomi": 0.06
+ },
+ {
+  "kod": "58",
+  "ilAd": "Sivas",
+  "parcaNo": 1,
+  "parcaAd": "Sivas Ovası",
+  "ilceler": [
+   "Merkez",
+   "Yıldızeli",
+   "Ulaş",
+   "Hafik"
+  ],
+  "arazi": "ova",
+  "nufus": 0.58,
+  "ekonomi": 0.6
+ },
+ {
+  "kod": "58",
+  "ilAd": "Sivas",
+  "parcaNo": 2,
+  "parcaAd": "Şarkışla-Kangal",
+  "ilceler": [
+   "Şarkışla",
+   "Gemerek",
+   "Altınyayla",
+   "Kangal"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.16,
+  "ekonomi": 0.15
+ },
+ {
+  "kod": "58",
+  "ilAd": "Sivas",
+  "parcaNo": 3,
+  "parcaAd": "Zara-Divriği",
+  "ilceler": [
+   "Zara",
+   "Divriği",
+   "İmranlı"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.12,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "58",
+  "ilAd": "Sivas",
+  "parcaNo": 4,
+  "parcaAd": "Suşehri",
+  "ilceler": [
+   "Suşehri",
+   "Koyulhisar",
+   "Gölova",
+   "Akıncılar",
+   "Doğanşar"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.14,
+  "ekonomi": 0.12
+ },
+ {
+  "kod": "38",
+  "ilAd": "Kayseri",
+  "parcaNo": 1,
+  "parcaAd": "Kayseri Kenti",
+  "ilceler": [
+   "Melikgazi",
+   "Kocasinan",
+   "Talas",
+   "Hacılar",
+   "İncesu"
+  ],
+  "arazi": "ova",
+  "nufus": 0.75,
+  "ekonomi": 0.78
+ },
+ {
+  "kod": "38",
+  "ilAd": "Kayseri",
+  "parcaNo": 2,
+  "parcaAd": "Develi-Yahyalı",
+  "ilceler": [
+   "Develi",
+   "Yahyalı",
+   "Yeşilhisar"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.11,
+  "ekonomi": 0.1
+ },
+ {
+  "kod": "38",
+  "ilAd": "Kayseri",
+  "parcaNo": 3,
+  "parcaAd": "Doğu Bozkır",
+  "ilceler": [
+   "Bünyan",
+   "Pınarbaşı",
+   "Sarız",
+   "Tomarza",
+   "Akkışla",
+   "Sarıoğlan",
+   "Felahiye",
+   "Özvatan"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.14,
+  "ekonomi": 0.12
+ },
+ {
+  "kod": "26",
+  "ilAd": "Eskişehir",
+  "parcaNo": 1,
+  "parcaAd": "Eskişehir Ovası",
+  "ilceler": [
+   "Odunpazarı",
+   "Tepebaşı",
+   "İnönü",
+   "Alpu",
+   "Mihalgazi",
+   "Sarıcakaya"
+  ],
+  "arazi": "ova",
+  "nufus": 0.83,
+  "ekonomi": 0.85
+ },
+ {
+  "kod": "26",
+  "ilAd": "Eskişehir",
+  "parcaNo": 2,
+  "parcaAd": "Sivrihisar",
+  "ilceler": [
+   "Sivrihisar",
+   "Çifteler",
+   "Mahmudiye",
+   "Beylikova",
+   "Günyüzü",
+   "Han",
+   "Seyitgazi",
+   "Mihalıççık"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.17,
+  "ekonomi": 0.15
+ },
+ {
+  "kod": "66",
+  "ilAd": "Yozgat",
+  "parcaNo": 1,
+  "parcaAd": "Bozok Platosu",
+  "ilceler": [
+   "Merkez",
+   "Yerköy",
+   "Şefaatli",
+   "Sorgun",
+   "Boğazlıyan",
+   "Sarıkaya",
+   "Yenifakılı"
+  ],
+  "arazi": "ova",
+  "nufus": 0.63,
+  "ekonomi": 0.64
+ },
+ {
+  "kod": "66",
+  "ilAd": "Yozgat",
+  "parcaNo": 2,
+  "parcaAd": "Akdağ",
+  "ilceler": [
+   "Akdağmadeni",
+   "Saraykent",
+   "Kadışehri",
+   "Çekerek",
+   "Aydıncık",
+   "Çayıralan",
+   "Çandır"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.37,
+  "ekonomi": 0.36
+ },
+ {
+  "kod": "18",
+  "ilAd": "Çankırı",
+  "parcaNo": 1,
+  "parcaAd": "Çankırı Merkez",
+  "ilceler": [
+   "Merkez",
+   "Eldivan",
+   "Korgun",
+   "Şabanözü",
+   "Kızılırmak",
+   "Yapraklı",
+   "Atkaracalar"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.62,
+  "ekonomi": 0.64
+ },
+ {
+  "kod": "18",
+  "ilAd": "Çankırı",
+  "parcaNo": 2,
+  "parcaAd": "Ilgaz-Çerkeş",
+  "ilceler": [
+   "Ilgaz",
+   "Çerkeş",
+   "Kurşunlu",
+   "Orta",
+   "Bayramören"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.38,
+  "ekonomi": 0.36
+ },
+ {
+  "kod": "70",
+  "ilAd": "Karaman",
+  "parcaNo": 1,
+  "parcaAd": "Karaman Ovası",
+  "ilceler": [
+   "Merkez",
+   "Ayrancı",
+   "Kazımkarabekir"
+  ],
+  "arazi": "ova",
+  "nufus": 0.78,
+  "ekonomi": 0.82
+ },
+ {
+  "kod": "70",
+  "ilAd": "Karaman",
+  "parcaNo": 2,
+  "parcaAd": "Ermenek",
+  "ilceler": [
+   "Ermenek",
+   "Başyayla",
+   "Sarıveliler"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.22,
+  "ekonomi": 0.18
+ },
+ {
+  "kod": "51",
+  "ilAd": "Niğde",
+  "parcaNo": 1,
+  "parcaAd": "Niğde Ovası",
+  "ilceler": [
+   "Merkez",
+   "Altunhisar",
+   "Çiftlik",
+   "Bor"
+  ],
+  "arazi": "ova",
+  "nufus": 0.85,
+  "ekonomi": 0.87
+ },
+ {
+  "kod": "51",
+  "ilAd": "Niğde",
+  "parcaNo": 2,
+  "parcaAd": "Bolkar Geçidi",
+  "ilceler": [
+   "Ulukışla",
+   "Çamardı"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.15,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "68",
+  "ilAd": "Aksaray",
+  "parcaNo": 1,
+  "parcaAd": "Aksaray",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "ova",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "50",
+  "ilAd": "Nevşehir",
+  "parcaNo": 1,
+  "parcaAd": "Nevşehir",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "40",
+  "ilAd": "Kırşehir",
+  "parcaNo": 1,
+  "parcaAd": "Kırşehir",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "ova",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "71",
+  "ilAd": "Kırıkkale",
+  "parcaNo": 1,
+  "parcaAd": "Kırıkkale",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "52",
+  "ilAd": "Ordu",
+  "parcaNo": 1,
+  "parcaAd": "Ordu Kıyı",
+  "ilceler": [
+   "Altınordu",
+   "Gülyalı",
+   "Perşembe",
+   "Ünye",
+   "Fatsa",
+   "Çaybaşı",
+   "İkizce"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.65,
+  "ekonomi": 0.67
+ },
+ {
+  "kod": "52",
+  "ilAd": "Ordu",
+  "parcaNo": 2,
+  "parcaAd": "Batı İç",
+  "ilceler": [
+   "Akkuş",
+   "Kumru",
+   "Korgan",
+   "Kabataş",
+   "Gürgentepe",
+   "Çatalpınar",
+   "Çamaş"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.17,
+  "ekonomi": 0.15
+ },
+ {
+  "kod": "52",
+  "ilAd": "Ordu",
+  "parcaNo": 3,
+  "parcaAd": "Güney Yayla",
+  "ilceler": [
+   "Aybastı",
+   "Gölköy",
+   "Mesudiye",
+   "Ulubey",
+   "Kabadüz"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.18,
+  "ekonomi": 0.18
+ },
+ {
+  "kod": "55",
+  "ilAd": "Samsun",
+  "parcaNo": 1,
+  "parcaAd": "Samsun Kenti",
+  "ilceler": [
+   "İlkadım",
+   "Atakum",
+   "Canik",
+   "Tekkeköy",
+   "19 Mayıs"
+  ],
+  "arazi": "ova",
+  "nufus": 0.52,
+  "ekonomi": 0.57
+ },
+ {
+  "kod": "55",
+  "ilAd": "Samsun",
+  "parcaNo": 2,
+  "parcaAd": "Bafra ve Çarşamba Ovaları",
+  "ilceler": [
+   "Bafra",
+   "Alaçam",
+   "Yakakent",
+   "Çarşamba",
+   "Terme",
+   "Salıpazarı",
+   "Ayvacık"
+  ],
+  "arazi": "ova",
+  "nufus": 0.35,
+  "ekonomi": 0.32
+ },
+ {
+  "kod": "55",
+  "ilAd": "Samsun",
+  "parcaNo": 3,
+  "parcaAd": "İç Kesim",
+  "ilceler": [
+   "Vezirköprü",
+   "Havza",
+   "Ladik",
+   "Kavak",
+   "Asarcık"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.13,
+  "ekonomi": 0.11
+ },
+ {
+  "kod": "37",
+  "ilAd": "Kastamonu",
+  "parcaNo": 1,
+  "parcaAd": "Kastamonu Merkez",
+  "ilceler": [
+   "Merkez",
+   "Taşköprü",
+   "Daday",
+   "Hanönü",
+   "Devrekani",
+   "Seydiler",
+   "İhsangazi"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.45,
+  "ekonomi": 0.48
+ },
+ {
+  "kod": "37",
+  "ilAd": "Kastamonu",
+  "parcaNo": 2,
+  "parcaAd": "Kıyı Şeridi",
+  "ilceler": [
+   "İnebolu",
+   "Cide",
+   "Bozkurt",
+   "Abana",
+   "Çatalzeytin",
+   "Doğanyurt",
+   "Şenpazar",
+   "Küre"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.25,
+  "ekonomi": 0.22
+ },
+ {
+  "kod": "37",
+  "ilAd": "Kastamonu",
+  "parcaNo": 3,
+  "parcaAd": "Güney",
+  "ilceler": [
+   "Tosya",
+   "Araç",
+   "Azdavay",
+   "Pınarbaşı",
+   "Ağlı"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.3,
+  "ekonomi": 0.3
+ },
+ {
+  "kod": "60",
+  "ilAd": "Tokat",
+  "parcaNo": 1,
+  "parcaAd": "Tokat Ovası",
+  "ilceler": [
+   "Merkez",
+   "Pazar",
+   "Artova",
+   "Yeşilyurt",
+   "Sulusaray"
+  ],
+  "arazi": "ova",
+  "nufus": 0.42,
+  "ekonomi": 0.42
+ },
+ {
+  "kod": "60",
+  "ilAd": "Tokat",
+  "parcaNo": 2,
+  "parcaAd": "Turhal-Zile",
+  "ilceler": [
+   "Turhal",
+   "Zile"
+  ],
+  "arazi": "ova",
+  "nufus": 0.22,
+  "ekonomi": 0.24
+ },
+ {
+  "kod": "60",
+  "ilAd": "Tokat",
+  "parcaNo": 3,
+  "parcaAd": "Erbaa-Niksar",
+  "ilceler": [
+   "Erbaa",
+   "Niksar",
+   "Reşadiye",
+   "Almus",
+   "Başçiftlik"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.36,
+  "ekonomi": 0.34
+ },
+ {
+  "kod": "67",
+  "ilAd": "Zonguldak",
+  "parcaNo": 1,
+  "parcaAd": "Ereğli Sanayi",
+  "ilceler": [
+   "Ereğli",
+   "Alaplı"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.35,
+  "ekonomi": 0.42
+ },
+ {
+  "kod": "67",
+  "ilAd": "Zonguldak",
+  "parcaNo": 2,
+  "parcaAd": "Zonguldak Havzası",
+  "ilceler": [
+   "Merkez",
+   "Kilimli",
+   "Kozlu",
+   "Çaycuma",
+   "Devrek",
+   "Gökçebey"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.65,
+  "ekonomi": 0.58
+ },
+ {
+  "kod": "28",
+  "ilAd": "Giresun",
+  "parcaNo": 1,
+  "parcaAd": "Giresun Kıyı",
+  "ilceler": [
+   "Merkez",
+   "Keşap",
+   "Piraziz",
+   "Bulancak",
+   "Dereli",
+   "Espiye",
+   "Tirebolu",
+   "Görele",
+   "Eynesil",
+   "Yağlıdere",
+   "Güce",
+   "Çanakçı",
+   "Doğankent"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.8,
+  "ekonomi": 0.82
+ },
+ {
+  "kod": "28",
+  "ilAd": "Giresun",
+  "parcaNo": 2,
+  "parcaAd": "Şebinkarahisar",
+  "ilceler": [
+   "Şebinkarahisar",
+   "Alucra",
+   "Çamoluk"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.2,
+  "ekonomi": 0.18
+ },
+ {
+  "kod": "61",
+  "ilAd": "Trabzon",
+  "parcaNo": 1,
+  "parcaAd": "Trabzon Kıyı",
+  "ilceler": [
+   "Ortahisar",
+   "Akçaabat",
+   "Yomra",
+   "Arsin",
+   "Vakfıkebir",
+   "Beşikdüzü",
+   "Çarşıbaşı",
+   "Sürmene",
+   "Of",
+   "Araklı"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.72,
+  "ekonomi": 0.75
+ },
+ {
+  "kod": "61",
+  "ilAd": "Trabzon",
+  "parcaNo": 2,
+  "parcaAd": "Güney Vadiler",
+  "ilceler": [
+   "Maçka",
+   "Çaykara",
+   "Dernekpazarı",
+   "Köprübaşı",
+   "Hayrat",
+   "Tonya",
+   "Şalpazarı",
+   "Düzköy"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.28,
+  "ekonomi": 0.25
+ },
+ {
+  "kod": "53",
+  "ilAd": "Rize",
+  "parcaNo": 1,
+  "parcaAd": "Rize Kıyı",
+  "ilceler": [
+   "Merkez",
+   "Çayeli",
+   "Derepazarı",
+   "İyidere",
+   "Ardeşen",
+   "Pazar",
+   "Fındıklı"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.72,
+  "ekonomi": 0.74
+ },
+ {
+  "kod": "53",
+  "ilAd": "Rize",
+  "parcaNo": 2,
+  "parcaAd": "Kaçkar Vadileri",
+  "ilceler": [
+   "Güneysu",
+   "Kalkandere",
+   "İkizdere",
+   "Çamlıhemşin",
+   "Hemşin"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.28,
+  "ekonomi": 0.26
+ },
+ {
+  "kod": "08",
+  "ilAd": "Artvin",
+  "parcaNo": 1,
+  "parcaAd": "Çoruh Kıyı",
+  "ilceler": [
+   "Merkez",
+   "Borçka",
+   "Murgul",
+   "Hopa",
+   "Arhavi",
+   "Kemalpaşa"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.62,
+  "ekonomi": 0.63
+ },
+ {
+  "kod": "08",
+  "ilAd": "Artvin",
+  "parcaNo": 2,
+  "parcaAd": "Yusufeli-Şavşat",
+  "ilceler": [
+   "Yusufeli",
+   "Şavşat",
+   "Ardanuç"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.38,
+  "ekonomi": 0.37
+ },
+ {
+  "kod": "57",
+  "ilAd": "Sinop",
+  "parcaNo": 1,
+  "parcaAd": "Sinop Kıyı",
+  "ilceler": [
+   "Merkez",
+   "Gerze",
+   "Erfelek",
+   "Ayancık",
+   "Türkeli",
+   "Dikmen"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.6,
+  "ekonomi": 0.62
+ },
+ {
+  "kod": "57",
+  "ilAd": "Sinop",
+  "parcaNo": 2,
+  "parcaAd": "Boyabat",
+  "ilceler": [
+   "Boyabat",
+   "Durağan",
+   "Saraydüzü"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.4,
+  "ekonomi": 0.38
+ },
+ {
+  "kod": "05",
+  "ilAd": "Amasya",
+  "parcaNo": 1,
+  "parcaAd": "Amasya Ovası",
+  "ilceler": [
+   "Merkez",
+   "Suluova",
+   "Göynücek"
+  ],
+  "arazi": "ova",
+  "nufus": 0.55,
+  "ekonomi": 0.55
+ },
+ {
+  "kod": "05",
+  "ilAd": "Amasya",
+  "parcaNo": 2,
+  "parcaAd": "Merzifon-Taşova",
+  "ilceler": [
+   "Merzifon",
+   "Gümüşhacıköy",
+   "Hamamözü",
+   "Taşova"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.45,
+  "ekonomi": 0.45
+ },
+ {
+  "kod": "14",
+  "ilAd": "Bolu",
+  "parcaNo": 1,
+  "parcaAd": "Bolu Ovası",
+  "ilceler": [
+   "Merkez",
+   "Mengen",
+   "Gerede",
+   "Yeniçağa",
+   "Dörtdivan"
+  ],
+  "arazi": "ova",
+  "nufus": 0.72,
+  "ekonomi": 0.75
+ },
+ {
+  "kod": "14",
+  "ilAd": "Bolu",
+  "parcaNo": 2,
+  "parcaAd": "Güney Dağlık",
+  "ilceler": [
+   "Mudurnu",
+   "Göynük",
+   "Seben",
+   "Kıbrıscık"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.28,
+  "ekonomi": 0.25
+ },
+ {
+  "kod": "19",
+  "ilAd": "Çorum",
+  "parcaNo": 1,
+  "parcaAd": "Çorum Ovası",
+  "ilceler": [
+   "Merkez",
+   "Mecitözü",
+   "Laçin",
+   "Sungurlu",
+   "Alaca",
+   "Boğazkale",
+   "Ortaköy",
+   "Uğurludağ"
+  ],
+  "arazi": "ova",
+  "nufus": 0.78,
+  "ekonomi": 0.8
+ },
+ {
+  "kod": "19",
+  "ilAd": "Çorum",
+  "parcaNo": 2,
+  "parcaAd": "Kuzey",
+  "ilceler": [
+   "Osmancık",
+   "İskilip",
+   "Kargı",
+   "Bayat",
+   "Dodurga",
+   "Oğuzlar"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.22,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "78",
+  "ilAd": "Karabük",
+  "parcaNo": 1,
+  "parcaAd": "Karabük",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "74",
+  "ilAd": "Bartın",
+  "parcaNo": 1,
+  "parcaAd": "Bartın",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "81",
+  "ilAd": "Düzce",
+  "parcaNo": 1,
+  "parcaAd": "Düzce",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "tepelik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "29",
+  "ilAd": "Gümüşhane",
+  "parcaNo": 1,
+  "parcaAd": "Gümüşhane",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "daglik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "69",
+  "ilAd": "Bayburt",
+  "parcaNo": 1,
+  "parcaAd": "Bayburt",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "daglik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "25",
+  "ilAd": "Erzurum",
+  "parcaNo": 1,
+  "parcaAd": "Erzurum Ovası",
+  "ilceler": [
+   "Yakutiye",
+   "Palandöken",
+   "Aziziye",
+   "Aşkale"
+  ],
+  "arazi": "ova",
+  "nufus": 0.57,
+  "ekonomi": 0.6
+ },
+ {
+  "kod": "25",
+  "ilAd": "Erzurum",
+  "parcaNo": 2,
+  "parcaAd": "Pasinler",
+  "ilceler": [
+   "Pasinler",
+   "Horasan",
+   "Köprüköy",
+   "Narman"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.13,
+  "ekonomi": 0.12
+ },
+ {
+  "kod": "25",
+  "ilAd": "Erzurum",
+  "parcaNo": 3,
+  "parcaAd": "Hınıs-Tekman",
+  "ilceler": [
+   "Hınıs",
+   "Karaçoban",
+   "Tekman",
+   "Çat"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.12,
+  "ekonomi": 0.1
+ },
+ {
+  "kod": "25",
+  "ilAd": "Erzurum",
+  "parcaNo": 4,
+  "parcaAd": "Oltu-Tortum",
+  "ilceler": [
+   "Oltu",
+   "Olur",
+   "Şenkaya",
+   "Tortum",
+   "Uzundere"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.12,
+  "ekonomi": 0.12
+ },
+ {
+  "kod": "25",
+  "ilAd": "Erzurum",
+  "parcaNo": 5,
+  "parcaAd": "İspir",
+  "ilceler": [
+   "İspir",
+   "Pazaryolu"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.06,
+  "ekonomi": 0.06
+ },
+ {
+  "kod": "65",
+  "ilAd": "Van",
+  "parcaNo": 1,
+  "parcaAd": "Van Kenti",
+  "ilceler": [
+   "İpekyolu",
+   "Tuşba",
+   "Edremit"
+  ],
+  "arazi": "ova",
+  "nufus": 0.45,
+  "ekonomi": 0.5
+ },
+ {
+  "kod": "65",
+  "ilAd": "Van",
+  "parcaNo": 2,
+  "parcaAd": "Erciş-Muradiye",
+  "ilceler": [
+   "Erciş",
+   "Muradiye",
+   "Çaldıran"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.25,
+  "ekonomi": 0.23
+ },
+ {
+  "kod": "65",
+  "ilAd": "Van",
+  "parcaNo": 3,
+  "parcaAd": "Özalp-Başkale",
+  "ilceler": [
+   "Özalp",
+   "Saray",
+   "Başkale"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.15,
+  "ekonomi": 0.14
+ },
+ {
+  "kod": "65",
+  "ilAd": "Van",
+  "parcaNo": 4,
+  "parcaAd": "Güney Dağlık",
+  "ilceler": [
+   "Gürpınar",
+   "Gevaş",
+   "Çatak",
+   "Bahçesaray"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.15,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "04",
+  "ilAd": "Ağrı",
+  "parcaNo": 1,
+  "parcaAd": "Ağrı Ovası",
+  "ilceler": [
+   "Merkez",
+   "Hamur",
+   "Tutak",
+   "Patnos",
+   "Eleşkirt"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.68,
+  "ekonomi": 0.68
+ },
+ {
+  "kod": "04",
+  "ilAd": "Ağrı",
+  "parcaNo": 2,
+  "parcaAd": "Doğubayazıt",
+  "ilceler": [
+   "Doğubayazıt",
+   "Diyadin",
+   "Taşlıçay"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.32,
+  "ekonomi": 0.32
+ },
+ {
+  "kod": "24",
+  "ilAd": "Erzincan",
+  "parcaNo": 1,
+  "parcaAd": "Erzincan Ovası",
+  "ilceler": [
+   "Merkez",
+   "Üzümlü",
+   "Çayırlı",
+   "Otlukbeli",
+   "Tercan"
+  ],
+  "arazi": "ova",
+  "nufus": 0.75,
+  "ekonomi": 0.77
+ },
+ {
+  "kod": "24",
+  "ilAd": "Erzincan",
+  "parcaNo": 2,
+  "parcaAd": "Batı Dağlık",
+  "ilceler": [
+   "Refahiye",
+   "Kemah",
+   "İliç",
+   "Kemaliye"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.25,
+  "ekonomi": 0.23
+ },
+ {
+  "kod": "36",
+  "ilAd": "Kars",
+  "parcaNo": 1,
+  "parcaAd": "Kars Ovası",
+  "ilceler": [
+   "Merkez",
+   "Selim",
+   "Arpaçay",
+   "Akyaka",
+   "Susuz"
+  ],
+  "arazi": "ova",
+  "nufus": 0.6,
+  "ekonomi": 0.62
+ },
+ {
+  "kod": "36",
+  "ilAd": "Kars",
+  "parcaNo": 2,
+  "parcaAd": "Sarıkamış-Kağızman",
+  "ilceler": [
+   "Sarıkamış",
+   "Kağızman",
+   "Digor"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.4,
+  "ekonomi": 0.38
+ },
+ {
+  "kod": "44",
+  "ilAd": "Malatya",
+  "parcaNo": 1,
+  "parcaAd": "Malatya Ovası",
+  "ilceler": [
+   "Battalgazi",
+   "Yeşilyurt",
+   "Yazıhan",
+   "Akçadağ",
+   "Doğanşehir",
+   "Darende"
+  ],
+  "arazi": "ova",
+  "nufus": 0.86,
+  "ekonomi": 0.87
+ },
+ {
+  "kod": "44",
+  "ilAd": "Malatya",
+  "parcaNo": 2,
+  "parcaAd": "Kuzey-Doğu Dağlık",
+  "ilceler": [
+   "Hekimhan",
+   "Arapgir",
+   "Arguvan",
+   "Kuluncak",
+   "Pütürge",
+   "Kale",
+   "Doğanyol"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.14,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "49",
+  "ilAd": "Muş",
+  "parcaNo": 1,
+  "parcaAd": "Muş Ovası",
+  "ilceler": [
+   "Merkez",
+   "Hasköy",
+   "Korkut",
+   "Bulanık",
+   "Malazgirt"
+  ],
+  "arazi": "ova",
+  "nufus": 0.85,
+  "ekonomi": 0.86
+ },
+ {
+  "kod": "49",
+  "ilAd": "Muş",
+  "parcaNo": 2,
+  "parcaAd": "Varto",
+  "ilceler": [
+   "Varto"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.15,
+  "ekonomi": 0.14
+ },
+ {
+  "kod": "13",
+  "ilAd": "Bitlis",
+  "parcaNo": 1,
+  "parcaAd": "Tatvan-Ahlat",
+  "ilceler": [
+   "Tatvan",
+   "Ahlat",
+   "Adilcevaz"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.5,
+  "ekonomi": 0.5
+ },
+ {
+  "kod": "13",
+  "ilAd": "Bitlis",
+  "parcaNo": 2,
+  "parcaAd": "Bitlis-Hizan",
+  "ilceler": [
+   "Merkez",
+   "Güroymak",
+   "Hizan",
+   "Mutki"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.5,
+  "ekonomi": 0.5
+ },
+ {
+  "kod": "23",
+  "ilAd": "Elazığ",
+  "parcaNo": 1,
+  "parcaAd": "Elazığ Ovası",
+  "ilceler": [
+   "Merkez",
+   "Sivrice",
+   "Keban",
+   "Ağın",
+   "Baskil"
+  ],
+  "arazi": "ova",
+  "nufus": 0.72,
+  "ekonomi": 0.75
+ },
+ {
+  "kod": "23",
+  "ilAd": "Elazığ",
+  "parcaNo": 2,
+  "parcaAd": "Doğu Dağlık",
+  "ilceler": [
+   "Kovancılar",
+   "Karakoçan",
+   "Palu",
+   "Maden",
+   "Arıcak",
+   "Alacakaya"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.28,
+  "ekonomi": 0.25
+ },
+ {
+  "kod": "30",
+  "ilAd": "Hakkari",
+  "parcaNo": 1,
+  "parcaAd": "Hakkari-Çukurca",
+  "ilceler": [
+   "Merkez",
+   "Çukurca"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.42,
+  "ekonomi": 0.45
+ },
+ {
+  "kod": "30",
+  "ilAd": "Hakkari",
+  "parcaNo": 2,
+  "parcaAd": "Yüksekova-Şemdinli",
+  "ilceler": [
+   "Yüksekova",
+   "Şemdinli",
+   "Derecik"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.58,
+  "ekonomi": 0.55
+ },
+ {
+  "kod": "12",
+  "ilAd": "Bingöl",
+  "parcaNo": 1,
+  "parcaAd": "Bingöl",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "daglik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "62",
+  "ilAd": "Tunceli",
+  "parcaNo": 1,
+  "parcaAd": "Tunceli",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "daglik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "75",
+  "ilAd": "Ardahan",
+  "parcaNo": 1,
+  "parcaAd": "Ardahan",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "daglik",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "76",
+  "ilAd": "Iğdır",
+  "parcaNo": 1,
+  "parcaAd": "Iğdır",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "ova",
+  "nufus": 1,
+  "ekonomi": 1
+ },
+ {
+  "kod": "21",
+  "ilAd": "Diyarbakır",
+  "parcaNo": 1,
+  "parcaAd": "Diyarbakır Kenti",
+  "ilceler": [
+   "Bağlar",
+   "Kayapınar",
+   "Sur",
+   "Yenişehir"
+  ],
+  "arazi": "ova",
+  "nufus": 0.58,
+  "ekonomi": 0.6
+ },
+ {
+  "kod": "21",
+  "ilAd": "Diyarbakır",
+  "parcaNo": 2,
+  "parcaAd": "Dicle Ovası",
+  "ilceler": [
+   "Bismil",
+   "Silvan",
+   "Hazro",
+   "Çınar"
+  ],
+  "arazi": "ova",
+  "nufus": 0.15,
+  "ekonomi": 0.15
+ },
+ {
+  "kod": "21",
+  "ilAd": "Diyarbakır",
+  "parcaNo": 3,
+  "parcaAd": "Ergani-Çermik",
+  "ilceler": [
+   "Ergani",
+   "Dicle",
+   "Eğil",
+   "Kocaköy",
+   "Çüngüş",
+   "Çermik"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.18,
+  "ekonomi": 0.17
+ },
+ {
+  "kod": "21",
+  "ilAd": "Diyarbakır",
+  "parcaNo": 4,
+  "parcaAd": "Kuzey Dağlık",
+  "ilceler": [
+   "Hani",
+   "Lice",
+   "Kulp"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.09,
+  "ekonomi": 0.08
+ },
+ {
+  "kod": "63",
+  "ilAd": "Şanlıurfa",
+  "parcaNo": 1,
+  "parcaAd": "Urfa Kenti",
+  "ilceler": [
+   "Eyyübiye",
+   "Haliliye",
+   "Karaköprü"
+  ],
+  "arazi": "ova",
+  "nufus": 0.5,
+  "ekonomi": 0.52
+ },
+ {
+  "kod": "63",
+  "ilAd": "Şanlıurfa",
+  "parcaNo": 2,
+  "parcaAd": "Harran ve Fırat",
+  "ilceler": [
+   "Harran",
+   "Akçakale",
+   "Suruç",
+   "Birecik",
+   "Bozova",
+   "Halfeti"
+  ],
+  "arazi": "ova",
+  "nufus": 0.2,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "63",
+  "ilAd": "Şanlıurfa",
+  "parcaNo": 3,
+  "parcaAd": "Siverek-Hilvan",
+  "ilceler": [
+   "Siverek",
+   "Hilvan"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.15,
+  "ekonomi": 0.13
+ },
+ {
+  "kod": "63",
+  "ilAd": "Şanlıurfa",
+  "parcaNo": 4,
+  "parcaAd": "Viranşehir-Ceylanpınar",
+  "ilceler": [
+   "Viranşehir",
+   "Ceylanpınar"
+  ],
+  "arazi": "ova",
+  "nufus": 0.15,
+  "ekonomi": 0.15
+ },
+ {
+  "kod": "47",
+  "ilAd": "Mardin",
+  "parcaNo": 1,
+  "parcaAd": "Mardin Eşiği",
+  "ilceler": [
+   "Artuklu",
+   "Yeşilli",
+   "Ömerli",
+   "Savur"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.3,
+  "ekonomi": 0.32
+ },
+ {
+  "kod": "47",
+  "ilAd": "Mardin",
+  "parcaNo": 2,
+  "parcaAd": "Kızıltepe-Nusaybin",
+  "ilceler": [
+   "Kızıltepe",
+   "Nusaybin",
+   "Derik",
+   "Mazıdağı"
+  ],
+  "arazi": "ova",
+  "nufus": 0.47,
+  "ekonomi": 0.46
+ },
+ {
+  "kod": "47",
+  "ilAd": "Mardin",
+  "parcaNo": 3,
+  "parcaAd": "Midyat-Dargeçit",
+  "ilceler": [
+   "Midyat",
+   "Dargeçit"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.23,
+  "ekonomi": 0.22
+ },
+ {
+  "kod": "27",
+  "ilAd": "Gaziantep",
+  "parcaNo": 1,
+  "parcaAd": "Gaziantep Kenti",
+  "ilceler": [
+   "Şahinbey",
+   "Şehitkamil",
+   "Oğuzeli",
+   "Nizip",
+   "Karkamış",
+   "Araban",
+   "Yavuzeli"
+  ],
+  "arazi": "ova",
+  "nufus": 0.91,
+  "ekonomi": 0.93
+ },
+ {
+  "kod": "27",
+  "ilAd": "Gaziantep",
+  "parcaNo": 2,
+  "parcaAd": "İslahiye-Nurdağı",
+  "ilceler": [
+   "İslahiye",
+   "Nurdağı"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.09,
+  "ekonomi": 0.07
+ },
+ {
+  "kod": "73",
+  "ilAd": "Şırnak",
+  "parcaNo": 1,
+  "parcaAd": "Cizre-Silopi",
+  "ilceler": [
+   "Cizre",
+   "Silopi",
+   "İdil"
+  ],
+  "arazi": "ova",
+  "nufus": 0.6,
+  "ekonomi": 0.65
+ },
+ {
+  "kod": "73",
+  "ilAd": "Şırnak",
+  "parcaNo": 2,
+  "parcaAd": "Şırnak Dağlık",
+  "ilceler": [
+   "Merkez",
+   "Güçlükonak",
+   "Uludere",
+   "Beytüşşebap"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.4,
+  "ekonomi": 0.35
+ },
+ {
+  "kod": "02",
+  "ilAd": "Adıyaman",
+  "parcaNo": 1,
+  "parcaAd": "Adıyaman Ovası",
+  "ilceler": [
+   "Merkez",
+   "Samsat",
+   "Besni",
+   "Gölbaşı",
+   "Tut"
+  ],
+  "arazi": "ova",
+  "nufus": 0.7,
+  "ekonomi": 0.72
+ },
+ {
+  "kod": "02",
+  "ilAd": "Adıyaman",
+  "parcaNo": 2,
+  "parcaAd": "Kâhta-Gerger",
+  "ilceler": [
+   "Kâhta",
+   "Gerger",
+   "Çelikhan",
+   "Sincik"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.3,
+  "ekonomi": 0.28
+ },
+ {
+  "kod": "72",
+  "ilAd": "Batman",
+  "parcaNo": 1,
+  "parcaAd": "Batman Ovası",
+  "ilceler": [
+   "Merkez",
+   "Beşiri"
+  ],
+  "arazi": "ova",
+  "nufus": 0.75,
+  "ekonomi": 0.8
+ },
+ {
+  "kod": "72",
+  "ilAd": "Batman",
+  "parcaNo": 2,
+  "parcaAd": "Kozluk-Sason",
+  "ilceler": [
+   "Kozluk",
+   "Sason",
+   "Gercüş",
+   "Hasankeyf"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.25,
+  "ekonomi": 0.2
+ },
+ {
+  "kod": "56",
+  "ilAd": "Siirt",
+  "parcaNo": 1,
+  "parcaAd": "Siirt Merkez",
+  "ilceler": [
+   "Merkez",
+   "Tillo",
+   "Kurtalan"
+  ],
+  "arazi": "tepelik",
+  "nufus": 0.65,
+  "ekonomi": 0.68
+ },
+ {
+  "kod": "56",
+  "ilAd": "Siirt",
+  "parcaNo": 2,
+  "parcaAd": "Doğu Dağlık",
+  "ilceler": [
+   "Pervari",
+   "Baykan",
+   "Eruh",
+   "Şirvan"
+  ],
+  "arazi": "daglik",
+  "nufus": 0.35,
+  "ekonomi": 0.32
+ },
+ {
+  "kod": "79",
+  "ilAd": "Kilis",
+  "parcaNo": 1,
+  "parcaAd": "Kilis",
+  "ilceler": [
+   "Tüm ilçeler"
+  ],
+  "arazi": "ova",
+  "nufus": 1,
+  "ekonomi": 1
+ }
+]

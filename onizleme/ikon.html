@@ -1,0 +1,216 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>İl Savaşları — uygulama ikonu</title>
+<style>
+  /* 2026-08-12: başlık fontu Oswald'dan Black Ops One'a geçti (bkz. `src/tema.js YAZI`).
+     Dosya doğrudan node_modules'tan okunuyor — ikon PNG olduğu için font uygulamaya
+     ayrıca gömülmüyor, yalnızca çizim anında gerekiyor. */
+  @font-face {
+    font-family: 'BlackOps';
+    src: url('/node_modules/@expo-google-fonts/black-ops-one/400Regular/BlackOpsOne_400Regular.ttf')
+      format('truetype');
+    font-weight: 400;
+  }
+  body { margin: 0; background: #222; display: flex; gap: 24px; padding: 24px; flex-wrap: wrap; }
+  canvas { image-rendering: auto; }
+</style>
+
+<canvas id="tuval" width="1024" height="1024"></canvas>
+
+<script>
+  // ---- İKON: Türkiye silueti + "İL SAVAŞLARI" ----
+  // Ölçüler tasarım isteğinden: harita MERKEZDE ve kenarın ~%60'ını kaplıyor.
+  // Renkler oyunun kendi temasından (koyu lacivert zemin, amber vurgu) — mağazadaki
+  // ikon ile oyunun açılışı aynı dili konuşsun.
+  // ---- ⚠ RENKLER OYUNUN KENDİ JETONLARINDAN (2026-08-12, Baki: "renkten hoşlanmadım,
+  // oyun içindeki renklerimizle benzer olsunlar veya direkt onlar olsunlar") ----
+  //
+  // İlk taslak amber/kâğıt-atlas tonlarıyla çizilmişti ve HATA BURADAYDI: oyunun paleti
+  // MAVİ tabanlı, tek sıcak lekesi KİREMİT (`VURGU.saldiri`). Amber temada hiç yok, yani
+  // ikon oyunun kendisiyle akraba değildi. Aşağıdaki beş değer `src/tema.js`'ten birebir
+  // kopyalandı — mağazadaki ikon ile oyunun açılışı aynı dili konuşsun.
+  //
+  // ---- ⚠ LACİVERT İKONA ÖZEL AYARLANDI (2026-08-16, Baki: "logodaki laciverti bir tık
+  // daha matlaştır ama koyuluğunu azalt") ----
+  // İki ayrı istek, iki ayrı eksen — karıştırılmasın:
+  //   MAT olmak   = doygunluk düşer (renk daha az "boya" gibi, daha çok "kumaş" gibi)
+  //   AÇILMAK     = parlaklık artar (siyaha daha uzak)
+  // Aynı maviyi (ton 209°) koruyup yalnızca bu ikisi değişti:
+  //   taban  doygunluk %38 → %28,  parlaklık %26 → %32
+  //   çukur  doygunluk %38 → %28,  parlaklık %20 → %26
+  // Aradaki 6 puanlık fark korundu, yani geçişin derinliği aynı; kütle bir tık açıldı.
+  // Okunurluk düşer diye bakıldı: beyaz yazı 7.5:1 (sınır 4.5), harita 4.2:1 (sınır 3) —
+  // ikisi de rahat geçiyor.
+  // BU DEĞERLER ARTIK `src/tema.js` İLE BİREBİR DEĞİL: oyunun içindeki zemin hâlâ eski,
+  // koyu hâlinde. Aynı açılma oyun ekranında da istenirse `tema.js ZEMIN` değişmeli.
+  const Z = 1024;
+  const ZEMIN_UST = '#3B5268';   // tema ZEMIN.taban'ın matlaştırılmış + açılmış hâli
+  const ZEMIN_ALT = '#304355';   // tema ZEMIN.cukur'un matlaştırılmış + açılmış hâli
+  const HARITA = '#b2bdc4';      // tema ZEMIN.harita — haritanın oyundaki kendi zemini
+  const HARITA_KENAR = '#0b1119'; // tema CIZGI.kalin  — oyundaki il sınırı rengi
+  const VURGU = '#BE5039';       // tema VURGU.saldiri — oyunun TEK sıcak rengi
+  const YAZI_AK = '#F2F7FA';     // tema YAZI_RENK.birincil
+
+  const t = document.getElementById('tuval');
+  const c = t.getContext('2d');
+
+  // 1) Zemin — hafif dikey geçiş, düz renkten daha derin duruyor.
+  const g = c.createLinearGradient(0, 0, 0, Z);
+  g.addColorStop(0, ZEMIN_UST);
+  g.addColorStop(1, ZEMIN_ALT);
+  c.fillStyle = g;
+  c.fillRect(0, 0, Z, Z);
+
+  async function ciz() {
+    const hat = await (await fetch('/veri/turkiye-hat.json')).json();
+    const yol = new Path2D(hat.yol);
+    const gen = hat.meta.genislik;   // 1000
+    const yuk = hat.meta.yukseklik;  // 452
+
+    // 2) Harita: kenarın %60'ı. Türkiye çok geniş bir şekil (1000×452), o yüzden
+    //    ölçek GENİŞLİĞE göre alınıyor — yükseklikten alınsa taşardı.
+    // ---- ⚠ %60 → %74 (2026-08-12, Baki: "haritayı bir tık büyütebilirsin, yukarısında
+    // boş yer var, sağ ve solda da bir tık var") ----
+    // İlk tarif "%60 yer kaplasın"dı ama çizilince görüldü ki Türkiye GENİŞ-ALÇAK bir
+    // şekil (1000×452): genişliğin %60'ı, kareyi doldurmaya yetmiyor ve üstte/yanlarda
+    // boşluk kalıyor. %74'te harita kenarlara yaklaşıyor, üst boşluk kapanıyor.
+    const hedefGenislik = Z * 0.9;
+    const olcek = hedefGenislik / gen;
+    const ciziliYuk = yuk * olcek;
+
+    // ---- DİKEY YERLEŞİM ELLE ÇÖZÜLDÜ (ilk taslakta üç şey çakışıyordu) ----
+    // 1) Ayırıcı çizgi "İL" yazısının İÇİNDEN geçiyordu.
+    // 2) "SAVAŞLARI" alt kenara yapışıktı — ikonlar köşeden kırpılır, Ş'nin kuyruğu gider.
+    // 3) Harita ile yazı arasında göze batan bir boşluk kalıyordu.
+    // Sayılar aşağıda tek tek hesaplandı; her birinin altında ne kadar pay kaldığı yazılı.
+    const dx = (Z - hedefGenislik) / 2;
+    const dy = Z * 0.33 - ciziliYuk / 2; // harita: üst ≈ 192, alt ≈ 535 px
+
+    c.save();
+    c.translate(dx, dy);
+    c.scale(olcek, olcek);
+
+    // Gölge: siluet zeminden ayrılsın.
+    c.shadowColor = 'rgba(0,0,0,0.55)';
+    c.shadowBlur = 26 / olcek;
+    c.shadowOffsetY = 10 / olcek;
+    c.fillStyle = HARITA;
+    c.fill(yol);
+    c.shadowColor = 'transparent';
+
+    // İnce kenar çizgisi — kâğıt atlas hissi.
+    c.strokeStyle = HARITA_KENAR;
+    c.lineWidth = 2.2 / olcek;
+    c.lineJoin = 'round';
+    c.stroke(yol);
+    c.restore();
+
+    // 3) Yazı — iki satır, hiyerarşili: "İL" küçük ve amber, "SAVAŞLARI" büyük ve açık.
+    await document.fonts.load('400 140px BlackOps');
+    c.textAlign = 'center';
+    c.textBaseline = 'middle';
+
+    // ---- "İL" BEYAZ (2026-08-12, Baki A seçeneğini seçti) ----
+    // Kiremit denendi ve beğenilmedi; beyazda iki satır TEK BLOK gibi duruyor, harita da
+    // tek renk olduğu için ikon üç değil iki tonla anlatılıyor. Yanındaki ayırıcı çizgiler
+    // de kaldırıldı: harita zaten güçlü bir amblem, ikinci bir grafik öge kalabalık ediyordu.
+    // Punto Oswald'a göre DÜŞTÜ (140 → 113) çünkü Black Ops One belirgin daha geniş —
+    // aynı puntoda "SAVAŞLARI" kenarlara taşıyordu.
+    c.fillStyle = YAZI_AK;
+    c.font = '400 113px BlackOps';
+    c.letterSpacing = '18px';
+    c.fillText('İL', Z / 2, 655);
+
+    // "SAVAŞLARI" DEĞİŞMEDİ (Baki: "yazının yeri ve büyüklüğü tam okay").
+    // Merkez 820 → üst ≈ 751 ("İL"e 26 px), Ş kuyruğuyla alt ≈ 914, alt kenara %11 pay.
+    c.fillStyle = YAZI_AK;
+    c.font = '400 108px BlackOps';
+    c.letterSpacing = '4px';
+    c.fillText('SAVAŞLARI', Z / 2, 820);
+
+    window.HAZIR = true;
+  }
+  ciz();
+
+  // ---- ANDROID VARYANTLARI ----
+  //
+  // Android'in "adaptif ikon"u iki katmandır (ön + arka) ve cihaz onu daire, kare ya da
+  // squircle olarak KIRPAR. Güvenli alan merkezdeki ~%66'dır; dışarıda kalan her şey
+  // gidebilir. Bu yüzden ön katmanda YAZI YOK — "SAVAŞLARI" güvenli alana sığdırılsa
+  // okunamayacak kadar küçülürdü. Amblem (harita) tek başına duruyor; wordmark'ı zaten
+  // mağaza listesi ve açılış ekranı taşıyor.
+  window.varyantUret = async function () {
+    const hat = await (await fetch('/veri/turkiye-hat.json')).json();
+    const yol = new Path2D(hat.yol);
+    const gen = hat.meta.genislik;
+    const yuk = hat.meta.yukseklik;
+
+    // Haritayı verilen tuvale, verilen genişlik oranıyla, ortalayarak çizer.
+    function haritaCiz(ctx, boyut, oran, dolgu, kenar) {
+      const hedef = boyut * oran;
+      const ol = hedef / gen;
+      ctx.save();
+      ctx.translate((boyut - hedef) / 2, boyut / 2 - (yuk * ol) / 2);
+      ctx.scale(ol, ol);
+      ctx.fillStyle = dolgu;
+      ctx.fill(yol);
+      if (kenar) {
+        ctx.strokeStyle = kenar;
+        ctx.lineWidth = 2.2 / ol;
+        ctx.lineJoin = 'round';
+        ctx.stroke(yol);
+      }
+      ctx.restore();
+    }
+
+    function tuval(boyut) {
+      const k = document.createElement('canvas');
+      k.width = k.height = boyut;
+      return k;
+    }
+
+    const cikti = {};
+
+    // Ön katman: şeffaf zemin, harita güvenli alanda (%52 — kırpma payıyla birlikte).
+    const on = tuval(1024);
+    haritaCiz(on.getContext('2d'), 1024, 0.58, HARITA, HARITA_KENAR);
+    cikti['android-icon-foreground.png'] = on.toDataURL('image/png');
+
+    // Arka katman: düz geçiş. Kırpma ne olursa olsun aynı görünür.
+    const arka = tuval(1024);
+    const ac = arka.getContext('2d');
+    const ag = ac.createLinearGradient(0, 0, 0, 1024);
+    ag.addColorStop(0, ZEMIN_UST);
+    ag.addColorStop(1, ZEMIN_ALT);
+    ac.fillStyle = ag;
+    ac.fillRect(0, 0, 1024, 1024);
+    cikti['android-icon-background.png'] = arka.toDataURL('image/png');
+
+    // Tek renk katman: Android 13+ "temalı ikon" bunu kendi rengiyle boyar, o yüzden
+    // DÜZ BEYAZ ve şeffaf zemin — renk seçimi cihazın işi.
+    const tek = tuval(1024);
+    haritaCiz(tek.getContext('2d'), 1024, 0.58, '#FFFFFF', null);
+    cikti['android-icon-monochrome.png'] = tek.toDataURL('image/png');
+
+    // Açılış ekranı: tam logo, şeffaf zemin (zemin rengi app.json'dan geliyor).
+    const acilis = tuval(1024);
+    const sc = acilis.getContext('2d');
+    sc.drawImage(t, 0, 0);
+    cikti['splash-icon.png'] = acilis.toDataURL('image/png');
+
+    // Web favicon: küçük boyutta yazı okunmaz, yalnızca amblem.
+    const fav = tuval(96);
+    haritaCiz(fav.getContext('2d'), 96, 0.8, HARITA, null);
+    cikti['favicon.png'] = fav.toDataURL('image/png');
+
+    // Uygulama ikonunun kendisi.
+    cikti['icon.png'] = t.toDataURL('image/png');
+
+    const sonuc = [];
+    for (const ad of Object.keys(cikti)) {
+      const r = await fetch('/kaydet?ad=' + ad, { method: 'POST', body: cikti[ad] });
+      sonuc.push(await r.text());
+    }
+    return sonuc;
+  };
+</script>
